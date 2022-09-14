@@ -223,9 +223,9 @@
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
             */
-            int initialPayment = 1;
+            double initialPayment = 1.00;
             double candyPrice = 0.54;
-            double changeGiven = initialPayment - candyPrice;
+            decimal changeGiven = (decimal)(initialPayment - candyPrice);
             /*
             30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
             will he have?
@@ -255,7 +255,7 @@
             */
             double danTotal = 3.00;
             double twixPrice = 1.00;
-            double moneyLeftForDan = danTotal - twixPrice;
+            decimal moneyLeftForDan = (decimal) (3.00M - 1.00M);
             /*
             34. 5 boats are in the lake. Each boat has 3 people. How many people are
             on boats in the lake?
@@ -297,7 +297,7 @@
             */
             int totCupcakes = 100;
             int totChildren = 8;
-            double cakePerPerson = (double) (totCupcakes / totChildren);
+            decimal cakePerPerson = (decimal) (totCupcakes / totChildren);
 
             /*
             40. She made 47 gingerbread cookies which she will distribute equally in
@@ -395,8 +395,8 @@
             */
             double billRoom = 1/2.15;
             double jillRoom = 1/1.90;
-            double billAndJill = billRoom + jillRoom;
-            double fiveRoomRate = 5 / billAndJill;
+            double billAndJill = (double)billRoom + jillRoom;
+            decimal fiveRoomRate =  (decimal)5 / billAndJill;
             /*
             52. Create and assign variables to hold a first name, last name, and middle initial. Using concatenation,
             build an additional variable to hold the full name in the order of last name, first name, middle initial. The
@@ -404,6 +404,7 @@
             with a period. Use "Grace", "Hopper, and "B" for the first name, last name, and middle initial.
             Example: "John", "Smith, "D" —> "Smith, John D."
             */
+
 
             /*
             53. The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.

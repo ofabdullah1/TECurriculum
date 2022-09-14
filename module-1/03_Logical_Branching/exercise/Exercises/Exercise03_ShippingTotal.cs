@@ -24,7 +24,17 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateShippingTotal(int weightInPounds)
         {
-            return 0;
+            if (weightInPounds <= MaxWeightPounds)
+            {
+                double result = weightInPounds* UpTo40PoundRate;
+                return result;
+            }
+            else
+            {
+                double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+                return result;
+            }
+            
         }
 
         /*
@@ -41,22 +51,31 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateShippingTotal(int weightInPounds, bool hasDiscount)
         {
-            return 0;
-        }
+            if ((weightInPounds >= 1) && (hasDiscount))
+            {
+                double result = ((MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate * (.10m))
+                return result;
+            }
+            if ((weightInPounds >= 1) && (hasDiscount = false))
+                double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+            {
+                return result;
+            }
 
-        /*
-         * As the business grows for Scamper Shipping Company, they now offer discounts in various amounts.
-         * Implement the logic to calculate the shipping rate when provided a weight in pounds
-         * and a discount percentage(for example, 0.1 = 10% off).
-         * 
-         * calculateShippingTotal(10, 0) ➔ 5.0
-         * calculateShippingTotal(10, 0.1) ➔ 4.5
-         * calculateShippingTotal(25, 0.15) ➔ 10.625
-         * calculateShippingTotal(45, 0.2) ➔ 19.0
-         */
-        public double CalculateShippingTotal(int weightInPounds, double discountPercentage)
+            /*
+             * As the business grows for Scamper Shipping Company, they now offer discounts in various amounts.
+             * Implement the logic to calculate the shipping rate when provided a weight in pounds
+             * and a discount percentage(for example, 0.1 = 10% off).
+             * 
+             * calculateShippingTotal(10, 0) ➔ 5.0
+             * calculateShippingTotal(10, 0.1) ➔ 4.5
+             * calculateShippingTotal(25, 0.15) ➔ 10.625
+             * calculateShippingTotal(45, 0.2) ➔ 19.0
+             */
+            public double CalculateShippingTotal(int weightInPounds, double discountPercentage)
         {
-            return 0;
+            double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+            return result;
         }
     }
 }
