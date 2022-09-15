@@ -58,11 +58,12 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights)
        {
-            if ((numberOfNights >= 3) && (numOfWeekendNights >=1))
+            if ((numberOfNights < 3) && (numOfWeekendNights <= 1))
             {
                 double result = ((numberOfNights * DiscountRate) + (numOfWeekendNights * DailyRate));
                     return result;
             }
+            else if (numberOfNights >= 3) && (numOfWeekendNights)
 
             return 0;
         }

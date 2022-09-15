@@ -253,9 +253,9 @@
             33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
             left?
             */
-            double danTotal = 3.00;
-            double twixPrice = 1.00;
-            decimal moneyLeftForDan = (decimal) (3.00M - 1.00M);
+            decimal danTotal = 3.00M;
+            decimal twixPrice = 1.00M;
+            decimal moneyLeftForDan = (decimal) (danTotal - twixPrice);
             /*
             34. 5 boats are in the lake. Each boat has 3 people. How many people are
             on boats in the lake?
@@ -295,9 +295,9 @@
             39. There are 100 cupcakes for 8 children to share. How much will each
             person get if they share the cupcakes equally?
             */
-            int totCupcakes = 100;
-            int totChildren = 8;
-            decimal cakePerPerson = (decimal) (totCupcakes / totChildren);
+            double totCupcakes = 100;
+            double totChildren = 8;
+            double cakePerPerson = (double) (totCupcakes / totChildren);
 
             /*
             40. She made 47 gingerbread cookies which she will distribute equally in
@@ -384,8 +384,8 @@
             50. Cristina baked 17 croissants. If she planned to serve this equally to
             her seven guests, how many will each have?
             */
-            int totalCroissants = 17;
-            int totalGuests = 7;
+            double totalCroissants = 17;
+            double totalGuests = 7;
             double guestCroissants = (double) (totalCroissants / totalGuests);
             /*
             51. Bill and Jill are house painters. Bill can paint a standard room in 2.15 hours, while Jill averages
@@ -393,10 +393,10 @@
             Hint: Calculate the rate at which each painter can complete a room (rooms / hour), combine those rates,
             and then divide the total number of rooms to be painted by the combined rate.
             */
-            double billRoom = 1/2.15;
-            double jillRoom = 1/1.90;
-            double billAndJill = (double)billRoom + jillRoom;
-            decimal fiveRoomRate =  (decimal)5 / billAndJill;
+            decimal billRate = (decimal) (1 / 2.15);
+            decimal jillRate = (decimal) (1 / 1.90);
+            decimal combinedRate = billRate + jillRate;
+            double fiveRoomRate = (double) (5 / combinedRate);
             /*
             52. Create and assign variables to hold a first name, last name, and middle initial. Using concatenation,
             build an additional variable to hold the full name in the order of last name, first name, middle initial. The
@@ -404,12 +404,21 @@
             with a period. Use "Grace", "Hopper, and "B" for the first name, last name, and middle initial.
             Example: "John", "Smith, "D" —> "Smith, John D."
             */
+            string firstName = "Grace";
+            string lastName = "Hopper";
+            string middleInitial = "B";
+
+            string fullName = lastName + ", " + firstName + " " + middleInitial + ".";
 
 
             /*
             53. The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
             What percentage of the trip as a whole number (integer) has been completed?
             */
+            int cityDistance = 800;
+            int trainDistance = 537;
+            double percentComplete = trainDistance / cityDistance;
+            int percentAsWhole = (int)(percentComplete * 100);
 
         }
     }
