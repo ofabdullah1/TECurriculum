@@ -34,9 +34,19 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool IsStoreOpen(int currentHour)
         {
-            return false;
+            if (currentHour >= 8 && currentHour < 17)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        
+        
         }
-
+         
+        
         /*
          * Shelia forgot to take into account the day of the week.
          * Her store is only open between 8 am(hour 8) and 5 pm(hour 17) on Monday(day M), Wednesday(day W), and Friday(day F).
@@ -56,7 +66,15 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool IsStoreOpen(int currentHour, char currentDay)
         {
-            return false;
+            if (currentHour >= 8 && currentHour < 17) 
+            
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /*
