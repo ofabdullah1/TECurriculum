@@ -58,24 +58,36 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights)
         {
-            if (numberOfNights >= 3 && numOfWeekendNights >= 1)
-            {
-                double result = (numberOfNights * DiscountRate) + (numOfWeekendNights) * DailyRate;
-            }
-            else if (numberOfNights < 3 && numOfWeekendNights < 0.01)
-
+            if (numberOfNights == 2 && numOfWeekendNights <= 1)
             {
                 double result = (numberOfNights * DailyRate);
                 return result;
             }
-            else if (numberOfNights >= 0.1 && numOfWeekendNights >= 1)
+
+            else if (numberOfNights >= 3 && numOfWeekendNights == 0)
             {
-                double result = (numOfWeekendNights * DailyRate);
+                double result = (numberOfNights * DiscountRate);
+                return result;
             }
-            else if (numberOfNights <= 0 && numOfWeekendNights >= 1)
+            else if (numberOfNights >= 3 && numOfWeekendNights == 1)
             {
-                double result = (numOfWeekendNights * DailyRate);
+                double result = (numberOfNights * DiscountRate) + numOfWeekendNights * DailyRate;
+                return result;
             }
+            else if (numberOfNights >= 3 && numOfWeekendNights == 2)
+
+            {
+                double result = (numberOfNights * DiscountRate) + numOfWeekendNights * DailyRate;
+                return result;
+            }
+            //else if (numberOfNights >= 0.1 && numOfWeekendNights >= 1)
+            //{
+            //    double result = (numOfWeekendNights * DailyRate);
+            //}
+            //else if (numberOfNights <= 0 && numOfWeekendNights >= 1)
+            //{
+            //    double result = (numOfWeekendNights * DailyRate);
+            //}
             return 0;
         }
 
