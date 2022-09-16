@@ -72,6 +72,10 @@ namespace TechElevator.Exercises.LogicalBranching
             {
                 double result = (numOfWeekendNights * DailyRate);
             }
+            else if (numberOfNights <= 0 && numOfWeekendNights >= 1)
+            {
+                double result = (numOfWeekendNights * DailyRate);
+            }
             return 0;
         }
 
