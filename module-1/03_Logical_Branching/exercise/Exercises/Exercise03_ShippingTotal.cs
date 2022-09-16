@@ -26,7 +26,7 @@ namespace TechElevator.Exercises.LogicalBranching
         {
             if (weightInPounds <= MaxWeightPounds)
             {
-                double result = weightInPounds* UpTo40PoundRate;
+                double result = weightInPounds * UpTo40PoundRate;
                 return result;
             }
             else
@@ -34,7 +34,7 @@ namespace TechElevator.Exercises.LogicalBranching
                 double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
                 return result;
             }
-            
+
         }
 
         /*
@@ -51,16 +51,30 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateShippingTotal(int weightInPounds, bool hasDiscount)
         {
-            if ((weightInPounds >= 1) && (hasDiscount))
+            if ((weightInPounds <= MaxWeightPounds) && (hasDiscount))
             {
-                double result = ((MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate * (.10m))
-                return result;
+                double result = weightInPounds * UpTo40PoundRate;
+                double discounted = ((result) - (result * .10));
+                return discounted;
             }
-            if ((weightInPounds >= 1) && (hasDiscount = false))
+            else if ((weightInPounds >= MaxWeightPounds) && (hasDiscount))
+            {
                 double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+                double discounted = ((result) - (result * .10));
+                return discounted;
+            }
+            else if (((weightInPounds <= MaxWeightPounds) && (!hasDiscount)))
             {
+                double result = weightInPounds * UpTo40PoundRate;
                 return result;
             }
+            else if (((weightInPounds >= MaxWeightPounds) && (!hasDiscount)))
+            {
+                double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+                return result;
+            }
+            return 0;
+        }
 
             /*
              * As the business grows for Scamper Shipping Company, they now offer discounts in various amounts.
@@ -72,10 +86,34 @@ namespace TechElevator.Exercises.LogicalBranching
              * calculateShippingTotal(25, 0.15) ➔ 10.625
              * calculateShippingTotal(45, 0.2) ➔ 19.0
              */
-            public double CalculateShippingTotal(int weightInPounds, double discountPercentage)
-        {
-            double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
-            return result;
+           public double CalculateShippingTotal(int weightInPounds, double discountPercentage)
+            {
+
+            if ((weightInPounds <= MaxWeightPounds) && (discountPercentage >=0.01))
+            {
+                double result = weightInPounds * UpTo40PoundRate;
+                double discounted = ((result) - (result * (discountPercentage)));
+                return discounted;
+            }
+            else if ((weightInPounds >= MaxWeightPounds) && (discountPercentage >= 0.01))
+            {
+                double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+                double discounted = ((result) - (result * (discountPercentage)));
+                return discounted;
+            }
+            else if ((weightInPounds <= MaxWeightPounds) && (discountPercentage < 0.01))
+            {
+                double result = weightInPounds * UpTo40PoundRate;
+                return result;
+            }
+            else if ((weightInPounds >= MaxWeightPounds) && (discountPercentage < 0.01))
+            {
+                double result = (MaxWeightPounds * UpTo40PoundRate) + ((weightInPounds - MaxWeightPounds) * Over40PoundRate);
+                return result;
+            }
+            return 0;
         }
-    }
-}
+            
+        }
+   }
+   

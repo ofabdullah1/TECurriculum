@@ -22,7 +22,7 @@ namespace Exercises
         */
         public char[] BuildOrder()
         {
-            return new char[] { };
+            return new char[] {'S', 'S','S','M','M','L'  };
         }
 
         /*
@@ -43,7 +43,23 @@ namespace Exercises
         */
         public char[] BuildBulkOrder(int numberOfShirts)
         {
-            return new char[] { };
+            char[] balOrder = new char[numberOfShirts];
+            for (int i = 0; i < balOrder.Length; i++)
+            {
+                if (i%3 == 0)
+                {
+                    balOrder[i] = 'S';
+                }
+               else if (i%3 ==1)
+                {
+                    balOrder[i] = 'M';
+                }
+                else if (i%3 == 2)
+                {
+                    balOrder[i] = 'L';
+                }
+            }
+            return balOrder;
         }
 
         /*

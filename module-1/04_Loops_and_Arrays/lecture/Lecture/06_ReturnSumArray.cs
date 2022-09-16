@@ -9,9 +9,18 @@
         public int ReturnSumArray()
         {
             int[] arrayToLoopThrough = { 3, 4, 2, 9 };
+            int sum = 0;
+            
+            for(int i=0; i <arrayToLoopThrough.Length; i++)
 
+            {
+                sum = sum + arrayToLoopThrough[i];
+            }
 
-            return 0;
+            //to return average
+
+            double average = sum / (double)arrayToLoopThrough.Length;
+            return sum;
         }
     }
 }

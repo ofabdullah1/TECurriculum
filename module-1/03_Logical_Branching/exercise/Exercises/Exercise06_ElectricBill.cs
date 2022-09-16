@@ -30,7 +30,17 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateElectricBill(double unitsUsed)
         {
-            return 0;
+            if (unitsUsed <= BasicServiceLimit) 
+            {
+                double result = unitsUsed * BaseServiceRate;
+                return result;
+            }
+            else 
+            {
+                double result = (BasicServiceLimit * BaseServiceRate) + ((unitsUsed - BasicServiceLimit) * ExcessServiceRate);
+                return result;
+            }
+
         }
 
         /*

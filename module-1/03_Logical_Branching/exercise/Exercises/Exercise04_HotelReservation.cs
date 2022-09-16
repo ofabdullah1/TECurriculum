@@ -57,14 +57,7 @@ namespace TechElevator.Exercises.LogicalBranching
          * calculateStayTotal(3, 2) ➔ 289.97
          */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights)
-       {
-            if ((numberOfNights < 3) && (numOfWeekendNights <= 1))
-            {
-                double result = ((numberOfNights * DiscountRate) + (numOfWeekendNights * DailyRate));
-                    return result;
-            }
-            else if (numberOfNights >= 3) && (numOfWeekendNights)
-
+        {
             return 0;
         }
 
@@ -89,5 +82,9 @@ namespace TechElevator.Exercises.LogicalBranching
         {
             return 0;
         }
+
+
     }
+
+    
 }

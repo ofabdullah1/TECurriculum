@@ -27,9 +27,16 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool AcceptPackage(int weightInPounds)
         {
-            return false;
+            if (weightInPounds <= 40)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        
+
         /*
          * Scamper Shipping delivers packages by hand, and some packages can be awkward to carry.
          * Scamper decides that in addition to the package being no more than 40 pounds, they must also limit its size.
@@ -40,7 +47,20 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool AcceptPackage(int weightInPounds, int lengthInInches, int widthInInches, int heightInInches)
         {
-            return false;
+
+            if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912)
+            {
+                return true;
+            }
+            else if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches > 6912)
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         /* 
@@ -63,6 +83,20 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool AcceptPackage(int weightInPounds, int lengthInInches, int widthInInches, int heightInInches, bool isSurchargePaid)
         {
+            if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912 && lengthInInches <= 66 && widthInInches <= 66 && heightInInches <= 66 && isSurchargePaid)
+            {
+                return true;
+            }
+            else if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912 && lengthInInches <= 66 && widthInInches <= 66 && heightInInches <= 66 && !isSurchargePaid)
+
+            {
+                return true;
+            }
+            else if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912 && lengthInInches >= 0 && widthInInches >= 0 && heightInInches >= 0 && isSurchargePaid)
+            {
+                return true;
+            }
+
             return false;
         }
     }
