@@ -66,15 +66,22 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public bool IsStoreOpen(int currentHour, char currentDay)
         {
-            if (currentHour >= 8 && currentHour < 17) 
-            
+            if (currentHour >= 8  && currentDay == 'M' || currentDay == 'W' || currentDay == 'F' || currentDay == 'S')
+
             {
                 return true;
             }
-            else
+
+
+            else if (currentHour < 8 && currentDay == 'M' || currentDay == 'W' || currentDay == 'F' || currentDay == 'S')
+            {
+                return true;
+            }
+            else if (currentHour <= 8 && currentDay == 'M') //|| currentDay == 'W' || currentDay == 'F' || currentDay == 'S')
             {
                 return false;
             }
+            return false;
         }
 
         /*

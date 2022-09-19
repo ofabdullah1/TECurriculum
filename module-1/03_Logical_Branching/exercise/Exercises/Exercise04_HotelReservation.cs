@@ -31,7 +31,7 @@ namespace TechElevator.Exercises.LogicalBranching
         {
             if (numberOfNights < 3)
             {
-                double result =  (numberOfNights * DailyRate);
+                double result = (numberOfNights * DailyRate);
                 return result;
             }
             else if (numberOfNights >= MinimumNightsForDiscountRate)
@@ -58,26 +58,15 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights)
         {
-            if (numberOfNights == 2 && numOfWeekendNights <= 1)
+            if (numberOfNights <= 2)
             {
-                double result = (numberOfNights * DailyRate);
+                double result = numberOfNights * DailyRate;
                 return result;
             }
 
-            else if (numberOfNights >= 3 && numOfWeekendNights == 0)
+            else
             {
-                double result = (numberOfNights * DiscountRate);
-                return result;
-            }
-            else if (numberOfNights >= 3 && numOfWeekendNights == 1)
-            {
-                double result = (numberOfNights * DiscountRate) + numOfWeekendNights * DailyRate;
-                return result;
-            }
-            else if (numberOfNights >= 3 && numOfWeekendNights == 2)
-
-            {
-                double result = (numberOfNights * DiscountRate) + numOfWeekendNights * DailyRate;
+                double result = (DiscountRate * (numberOfNights - numOfWeekendNights)) + (DailyRate * numOfWeekendNights);
                 return result;
             }
             //else if (numberOfNights >= 0.1 && numOfWeekendNights >= 1)
@@ -88,7 +77,7 @@ namespace TechElevator.Exercises.LogicalBranching
             //{
             //    double result = (numOfWeekendNights * DailyRate);
             //}
-            return 0;
+
         }
 
         /*
@@ -110,11 +99,58 @@ namespace TechElevator.Exercises.LogicalBranching
         */
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights, bool isRewardsMember)
         {
+
+
+
+
+            if (numberOfNights <= 2 && numOfWeekendNights >= 0 && !isRewardsMember)
+            {
+                double result = numberOfNights * DailyRate;
+                return result;
+            }
+
+            else if (numberOfNights >= 1 && numOfWeekendNights >=0 && isRewardsMember)
+            {
+                double result = numberOfNights * DiscountRate;
+                return result;
+            }
+            else if (numberOfNights >= 1 && numOfWeekendNights >= 0 && isRewardsMember)
+
+            {
+                double result = numberOfNights * DiscountRate;
+                return result;
+            }
+            else if ((numberOfNights == 0 && numOfWeekendNights >= 1 && !isRewardsMember))
+            {
+                double result = numberOfNights * DailyRate;
+                return result;
+            }
+            else if (numberOfNights >= 2 && numOfWeekendNights <= 1 && !isRewardsMember)
+            {
+                double result = numberOfNights * DailyRate;
+            }
+            
+            else
+            
+            {
+                double result = (DiscountRate * (numberOfNights - numOfWeekendNights)) + (DailyRate * numOfWeekendNights);
+                return result;
+            }
+
+
             return 0;
+
+            //else 
+            //{
+            //    double result = (DiscountRate * (numberOfNights - numOfWeekendNights)) + (DailyRate * numOfWeekendNights);
+            //    return result;
+            //}
+
         }
 
 
-    }
 
-    
+
+    }
 }
+        

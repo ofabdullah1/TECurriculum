@@ -22,7 +22,7 @@ namespace Exercises
         */
         public char[] BuildOrder()
         {
-            return new char[] {'S', 'S','S','M','M','L'  };
+            return new char[] { 'S', 'S', 'S', 'M', 'M', 'L' };
         }
 
         /*
@@ -46,15 +46,15 @@ namespace Exercises
             char[] balOrder = new char[numberOfShirts];
             for (int i = 0; i < balOrder.Length; i++)
             {
-                if (i%3 == 0)
+                if (i % 3 == 0)
                 {
                     balOrder[i] = 'S';
                 }
-               else if (i%3 ==1)
+                else if (i % 3 == 1)
                 {
                     balOrder[i] = 'M';
                 }
-                else if (i%3 == 2)
+                else if (i % 3 == 2)
                 {
                     balOrder[i] = 'L';
                 }
@@ -77,7 +77,21 @@ namespace Exercises
         */
         public bool PlaceRequest(char[] order)
         {
-            return false;
+           bool numberOfSmalls = false;
+
+           
+            
+            for (int i = 0; i < order.Length; i++)
+            {
+                if (order[i] == 'S')
+                
+                {
+                    numberOfSmalls = true;
+
+                }
+                
+            }
+            return numberOfSmalls;
         }
     }
 }

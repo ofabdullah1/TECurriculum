@@ -23,7 +23,7 @@ namespace DecimalToBinary
 
                 int newBinary = int.Parse(binaries[i]);
                 string listValues = Convert.ToString(newBinary, 2);
-                Console.WriteLine(newBinary + "in binary is" + listValues);
+                Console.WriteLine(newBinary + " in binary is " + listValues);
 
             }
         }

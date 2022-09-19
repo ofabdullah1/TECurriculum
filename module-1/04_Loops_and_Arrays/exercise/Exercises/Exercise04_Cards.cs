@@ -30,7 +30,7 @@ namespace Exercises
         */
         public string GetFirstCard(string[] hand)
         {
-            return "";
+            return hand[0] ;
         }
 
         /*
@@ -48,6 +48,8 @@ namespace Exercises
         */
         public string[] DiscardFirstCard(String[] hand)
         {
+            //string[] minusFirst = new string[hand];
+            
             return new string[] { };
         }
 
