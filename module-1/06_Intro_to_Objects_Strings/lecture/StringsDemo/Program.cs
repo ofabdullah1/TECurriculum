@@ -36,8 +36,8 @@ namespace StringsDemo
              Console.WriteLine("First and Last Character. ");
             Console.WriteLine(name[0]);
             Console.WriteLine(name[name.Length-1]);
-
             Console.WriteLine();
+            
 
             // 2. How do we write code that prints out the first three characters
             // Output: Ada
@@ -95,14 +95,20 @@ namespace StringsDemo
 
             // 8. Replace "Ada" with "Ada, Countess of Lovelace"
 
-            result = name.Replace("da", "Ada, Countess of Lovelace");
+            result = name.Replace("Ada", "Ada, Countess of Lovelace");
             Console.WriteLine(result);
+            Console.WriteLine();
 
             // Console.WriteLine(name);
 
             // 9. Set name equal to null.
 
+            name = null;
+            Console.WriteLine("");
+
             // 10. If name is equal to null or "", print out "All Done".
+
+            Console.WriteLine(String.IsNullOrEmpty(name));
 
             Console.ReadLine();
         }

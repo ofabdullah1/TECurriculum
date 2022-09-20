@@ -48,20 +48,16 @@ namespace Exercises
         */
         public string[] DiscardFirstCard(String[] hand)
         {
-            //if (hand.Length > 0)
+
+            string[] newArray = new string[hand.Length - 1];
             
-            //for (int i = 0; i < hand.Length; i++)
-            
+            for(int i = 0; i < newArray.Length;i++)
             {
-
-
-                
-                
-                        return hand;
-                
-
+                newArray[i] = hand[i + 1];
             }
+            return newArray;
 
+            
 
 
         }
