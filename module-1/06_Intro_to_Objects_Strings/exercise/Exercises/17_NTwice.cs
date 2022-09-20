@@ -11,6 +11,9 @@
         */
         public string NTwice(string str, int n)
         {
+            string lastTwo = str.Substring(str.Length - n);
+            string firtOnes = str.Substring(0, n);
+            return firtOnes + lastTwo;
             return null;
         }
     }

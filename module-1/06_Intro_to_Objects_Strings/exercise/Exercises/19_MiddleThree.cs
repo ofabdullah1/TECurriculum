@@ -11,6 +11,11 @@
         */
         public string MiddleThree(string str)
         {
+            if (str.Length % 2 != 0)
+
+            {
+                return null;
+            }
             return null;
         }
     }

@@ -12,7 +12,22 @@
         */
         public bool HasBad(string str)
         {
+
+
+            //bool containsBadFr = str.Contains("bad");
+            // string containsBad = str.Substring(0, 1);
+            
+            if (str.Equals("bad"))
+
+            {
+                return true;
+            }
             return false;
+            
+
+            
+              
+            
         }
     }
 }

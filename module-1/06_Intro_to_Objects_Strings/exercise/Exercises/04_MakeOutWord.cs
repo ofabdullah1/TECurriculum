@@ -13,7 +13,10 @@
         public string MakeOutWord(string outword, string word)
         {
 
-            return null;
+            string result = outword.Substring(0, 2);
+            string resultLast = outword.Substring(outword.Length - 2);
+            return (result + word + resultLast);
+                
         }
     }
 }

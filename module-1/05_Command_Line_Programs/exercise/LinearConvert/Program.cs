@@ -25,12 +25,12 @@ namespace LinearConvert
 
             {
                 tempChoice = tempChoice * 3.2808399;
-                Console.WriteLine(length + "meters" + " " + "is " + tempChoice + " feet.");
+                Console.WriteLine(length + " meters" + " " + "is " + tempChoice + " feet.");
             }
             else if (lengthType == "f")
             {
                 tempChoice = tempChoice * 0.3048;
-                Console.WriteLine(length + "feet" + " " + "is " + tempChoice + " meters.");
+                Console.WriteLine(length + " feet" + " " + "is " + tempChoice + " meters.");
             }
         }
     }

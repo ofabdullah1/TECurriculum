@@ -11,7 +11,10 @@
         */
         public string Right2(string str)
         {
-            return null;
+            string result = str.Substring(str.Length - 2);
+            string result2 = str.Substring(0, str.Length - 2);
+
+            return result + result2;
         }
     }
 }

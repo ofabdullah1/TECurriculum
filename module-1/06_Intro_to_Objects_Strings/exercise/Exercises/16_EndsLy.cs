@@ -10,7 +10,16 @@
         */
         public bool EndsLy(string str)
         {
-            return false;
+            //string lastTwo = str.Substring(str.Length - 2);
+            //if (lastTwo == "ly")
+            //{
+            //    return true;
+            //}
+            //return false;
+
+            bool endsWithLy = str.EndsWith("ly");
+            return endsWithLy;
+        
         }
     }
 }

@@ -11,7 +11,15 @@
         */
         public string Left2(string str)
         {
-            return null;
+
+            
+            {
+                string result = str.Substring(2); 
+                string result2 = str.Substring(0,2);
+                
+                return result + result2;
+            }
+            
         }
     }
 }

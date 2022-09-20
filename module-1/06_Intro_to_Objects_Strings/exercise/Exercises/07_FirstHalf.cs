@@ -10,7 +10,13 @@
         */
         public string FirstHalf(string str)
         {
-            return null;
+            string result = str.Substring(0, str.Length/2) ;
+            return result;
         }
     }
 }
+//string lastThree = name.Substring(name.Length - 3);
+
+//Console.WriteLine(result + lastThree);
+
+//Console.WriteLine();
