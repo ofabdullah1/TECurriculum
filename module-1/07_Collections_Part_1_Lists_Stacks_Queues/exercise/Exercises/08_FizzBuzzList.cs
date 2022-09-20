@@ -18,7 +18,7 @@ namespace Exercises
         */
         public List<string> FizzBuzzList(int[] integerArray)
         {
-            //List<string> result = new List<string>();
+            List<string> result = new List<string>();
             
 
             
