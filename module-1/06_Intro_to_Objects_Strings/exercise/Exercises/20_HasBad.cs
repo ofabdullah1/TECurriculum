@@ -14,10 +14,10 @@
         {
 
 
-            //bool containsBadFr = str.Contains("bad");
-            // string containsBad = str.Substring(0, 1);
+                bool containsBadFr = str.Contains("bad");
+           string containsBad = str.Substring(0, 1);
             
-            if (str.Equals("bad"))
+           // if (str.Substring(1) = str.Contains("bad")
 
             {
                 return true;

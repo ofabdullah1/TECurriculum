@@ -10,7 +10,8 @@
         */
         public string StringTimes(string str, int n)
         {
-            return null;
+            string wholeString = str.Substring(0, str.Length-1);
+            return wholeString;
         }
     }
 }

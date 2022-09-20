@@ -11,13 +11,17 @@
         */
         public string WithoutEnd2(string str)
         {
-            if (str.Length >= 2)
+            string withoutEnd =("");
+            if (str.Length >= 3)
 
             {
-                string result = str.Substring(1, str.Length -2);
-                return result;
+                string result = str.Remove(0, 1);
+                string result2 = result.Remove(result.Length-1);
+                return result2;
+                
+                
             }
-            return str;
+            return withoutEnd;
         }
     }
 }
