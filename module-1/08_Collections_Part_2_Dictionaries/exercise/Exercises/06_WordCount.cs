@@ -18,7 +18,30 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            Dictionary<string, int> numberCount = new Dictionary<string, int>();
+
+            foreach (string item in words)
+            {
+
+                if (numberCount.ContainsKey(item) == true)
+                {
+                    //item exists in dict
+                    //add 1 to existing item
+                    numberCount[item] = numberCount[item] + 1;
+                }
+                else
+                {
+                    // create a new dict entry
+                    numberCount[item] = 1;
+
+                }
+
+
+            }
+
+
+
+            return numberCount;
         }
     }
 }

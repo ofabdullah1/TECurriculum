@@ -28,7 +28,32 @@ namespace Exercises
          */
         public double IsItOnSale(string itemNumber)
         {
-            return -1.0;
+            Dictionary<string, double> groups = new Dictionary<string, double>();
+
+            groups["kitchen4001"] = 0.20;
+            groups["garage1070"] = 0.15;
+            groups["livingroom"] = 0.10;
+            groups["kitchen6073"] = 0.40;
+            groups["bedroom3434"] = 0.60;
+            groups["bath0073"] = 0.15;
+           
+
+
+            if (itemNumber == null)
+
+            {
+                return 0.00;
+            }
+            itemNumber = itemNumber.ToLower();
+
+            if (groups.ContainsKey(itemNumber) == true)
+
+            {
+               
+                return groups[itemNumber];
+            }
+            else return 0.00;
+
         }
     }
 }

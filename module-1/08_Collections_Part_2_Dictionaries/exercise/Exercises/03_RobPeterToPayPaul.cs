@@ -16,7 +16,12 @@ namespace Exercises
          */
         public Dictionary<string, int> RobPeterToPayPaul(Dictionary<string, int> peterPaul)
         {
-            return null;
+            Dictionary<string, int> groups = new Dictionary<string, int>();
+
+          //  if (peterPaul <= 1000)
+            {
+                return null;
+            }
         }
     }
 }

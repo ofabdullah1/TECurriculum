@@ -15,6 +15,8 @@ namespace Exercises
          */
         public Dictionary<string, int> PeterPaulPartnership(Dictionary<string, int> peterPaul)
         {
+            Dictionary<string, int> groups = new Dictionary<string, int>();
+
             return null;
         }
     }

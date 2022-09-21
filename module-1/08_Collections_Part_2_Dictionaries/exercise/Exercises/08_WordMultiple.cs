@@ -15,7 +15,51 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            Dictionary<string, bool> numberCount = new Dictionary<string, bool>();
+
+            foreach (string item in words)
+            {
+
+
+
+                if (numberCount.ContainsKey(item) == true)
+                {
+                    //item exists in dict
+                    //add 1 to existing item
+                    numberCount[item] = true;
+                }
+                else
+                {
+
+                    numberCount[item] = false;
+
+                }
+
+                
+            }
+            return numberCount;
+
+
+
+
+
+            //foreach (string item in words)
+            //{
+            //    bool appearsTwice = numberCount.ContainsKey(item + item);
+
+            //    if (appearsTwice)
+            //    {
+            //        //item appears 2 or more times
+            //        // return item as key and true value
+
+            //        numberCount[item] = numberCount[item] + 1;
+            //    }
+            //    else
+            //    {
+            //        retur
+
+            //    }
+
         }
-    }
+        }
 }
