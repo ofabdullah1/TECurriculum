@@ -56,31 +56,43 @@ namespace TechElevator.Exercises.LogicalBranching
          */
         public double CalculateElectricBill(double unitsUsed, bool hasRenewableEnergy)
         {
-            if (unitsUsed <= BasicServiceLimit && hasRenewableEnergy)
-            {
-                double result = unitsUsed * BaseServiceRate;
-                double discounted = ((result) - (result * .05));
-                return discounted;
-            }
-           
-            else if (unitsUsed <= BasicServiceLimit && unitsUsed >= 0.01 && !hasRenewableEnergy)
+
+            if (unitsUsed <= BasicServiceLimit && !hasRenewableEnergy)
             {
                 double result = unitsUsed * BaseServiceRate;
                 return result;
             }
-            else if (unitsUsed >= BasicServiceLimit && !hasRenewableEnergy)
+            else if (unitsUsed > BasicServiceLimit && !hasRenewableEnergy)
             {
                 double result = (BasicServiceLimit * BaseServiceRate) + ((unitsUsed - BasicServiceLimit) * ExcessServiceRate);
                 return result;
             }
-            else if (unitsUsed >= BasicServiceLimit && hasRenewableEnergy)
+            else if (unitsUsed <= BasicServiceLimit && hasRenewableEnergy)
+            {
+
+                double result = (unitsUsed * BaseServiceRate);
+                double cheapResult = result * .05;
+
+                double cheapest = result - cheapResult;
+                return cheapest;
+
+            }
+            else if (unitsUsed > BaseServiceRate && hasRenewableEnergy)
             {
                 double result = (BasicServiceLimit * BaseServiceRate) + ((unitsUsed - BasicServiceLimit) * ExcessServiceRate);
-                double upTick = ((result) - (result * .05));
-                return upTick;
+                double cheapResult = (result * .05);
+                double cheapest = result - cheapResult;
+                return cheapest;
             }
+
             return 0;
+
         }
+        
+        
+        
+        
+        
         /*
          * Tech Electric now allows customers with renewable energy to return electricity back into the grid,
          * and has accordingly adjusted the rules around the renewable energy discount.

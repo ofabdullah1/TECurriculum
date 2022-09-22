@@ -100,52 +100,28 @@ namespace TechElevator.Exercises.LogicalBranching
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights, bool isRewardsMember)
         {
 
-
-
-
-            if (numberOfNights <= 2 && numOfWeekendNights >= 0 && !isRewardsMember)
-            {
-                double result = numberOfNights * DailyRate;
-                return result;
-            }
-
-            else if (numberOfNights >= 1 && numOfWeekendNights >=0 && isRewardsMember)
-            {
-                double result = numberOfNights * DiscountRate;
-                return result;
-            }
-            else if (numberOfNights >= 1 && numOfWeekendNights >= 0 && isRewardsMember)
+            if (numberOfNights >= 1 && numOfWeekendNights == 0 && isRewardsMember)
 
             {
                 double result = numberOfNights * DiscountRate;
-                return result;
             }
-            else if ((numberOfNights == 0 && numOfWeekendNights >= 1 && !isRewardsMember))
+            else if (numberOfNights <= 1 && isRewardsMember)
+
+            {
+                double result = numberOfNights * DiscountRate;
+            }
+            else if (numberOfNights <=2 && numOfWeekendNights >= 0 && !isRewardsMember)
+
             {
                 double result = numberOfNights * DailyRate;
                 return result;
             }
-            else if (numberOfNights >= 2 && numOfWeekendNights <= 1 && !isRewardsMember)
-            {
-                double result = numberOfNights * DailyRate;
-            }
-            
-            else
-            
+            else 
             {
                 double result = (DiscountRate * (numberOfNights - numOfWeekendNights)) + (DailyRate * numOfWeekendNights);
                 return result;
             }
-
-
             return 0;
-
-            //else 
-            //{
-            //    double result = (DiscountRate * (numberOfNights - numOfWeekendNights)) + (DailyRate * numOfWeekendNights);
-            //    return result;
-            //}
-
         }
 
 

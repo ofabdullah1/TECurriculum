@@ -17,16 +17,14 @@ namespace Exercises
             Dictionary<string, string> numberCount = new Dictionary<string, string>();
 
              foreach (string item in words)
-            for (int i = 0; i < numberCount.Count; i++)
+           // for (int i = 0; i < numberCount.Count; i++)
                 
                 {
                 
                    // numberCount[item] = item.Substring(0,1);
-                    numberCount.Add(item.Substring(0, 1), item.Substring(item.Length - 1, 1)); //item.Substring(item.Length-1,1);
+                    numberCount.Add(item.Substring(0, 1), item.Substring(item.Length - 1, item.Length)); 
 
                 }
-
-
 
                 return numberCount;
         }

@@ -92,11 +92,14 @@ namespace TechElevator.Exercises.LogicalBranching
             {
                 return true;
             }
-            else if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912 && lengthInInches >= 0 && widthInInches >= 0 && heightInInches >= 0 && isSurchargePaid)
+            else if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912 && lengthInInches > 66 || widthInInches >= 66 || heightInInches > 66 && isSurchargePaid)
             {
                 return true;
             }
-
+            else if (weightInPounds <= 40 && lengthInInches * widthInInches * heightInInches <= 6912 && lengthInInches > 66 || widthInInches >= 66 || heightInInches > 66 && isSurchargePaid)
+            {
+                return false;
+            }
             return false;
         }
     }
