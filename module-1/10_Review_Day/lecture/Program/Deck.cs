@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Program
+namespace CardGame
 {
     class Deck
     {
@@ -11,8 +11,8 @@ namespace Program
 
         private string[] suits = { "Spades", "Diamonds", "Hearts", "Clubs" };
         private string[] values = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-       
-        public Deck ()
+
+        public Deck()
         {
             CreateDeck();
         }
@@ -23,7 +23,7 @@ namespace Program
         private void CreateDeck()
         {
 
-            foreach(string suit in suits)
+            foreach (string suit in suits)
             {
                 foreach (string value in values)
                 {
@@ -46,5 +46,26 @@ namespace Program
 
             return result;
         }
+
+
+        public void Shuffle()
+        {
+            Random random = new Random();
+
+            for (int i = 0; i < Cards.Count; i++)
+
+            {
+                int j = random.Next(Cards.Count);
+                Card temp = Cards[i];
+                Cards[i] = Cards[j];
+                Cards[j] = temp;
+            }
+        }
+
+        public Card DealACard()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+

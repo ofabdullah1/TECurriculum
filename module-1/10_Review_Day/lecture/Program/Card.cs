@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Program
+namespace CardGame
 {
     public class Card
     {
@@ -21,17 +21,9 @@ namespace Program
 
         public override string ToString()
         {
-            return Suit + " - " + Value + ((IsFaceUp) ? " is face up" : " is face down");
+            return Value + " of " + Suit + ((IsFaceUp) ? " is face up" : " is face down");
         }
 
-        public void Shuffle()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Card DealACard()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

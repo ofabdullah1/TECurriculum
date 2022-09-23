@@ -8,12 +8,17 @@
 
         public void TurnOff()
         {
-            this.IsOn = false;
+            IsOn = false;
         }
 
         public void TurnOn()
         {
-            IsOn = true;
+            
+            IsOn = false;
+            while(!IsOn)
+            {
+                IsOn = true;
+            }
         }
         
         public void ChangeChannel(int newChannel)

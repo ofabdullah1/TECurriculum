@@ -35,16 +35,13 @@
            totalNumberOfSeats = AvailableFirstClassSeats + BookedFirstClassSeats + AvailableCoachSeats + BookedCoachSeats;
              
            
-            if (forFirstClass && BookedFirstClassSeats <= AvailableFirstClassSeats)
+            if (forFirstClass && BookedFirstClassSeats < AvailableFirstClassSeats)
             {
                 
                 return true;
-               
-                
-
-
+              
             }
-            else if (!forFirstClass && BookedCoachSeats <= AvailableCoachSeats)
+            else if (!forFirstClass && BookedCoachSeats < AvailableCoachSeats)
             {
                 
                 return true;
