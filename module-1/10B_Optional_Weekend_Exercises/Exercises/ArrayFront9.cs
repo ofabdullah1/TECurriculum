@@ -16,7 +16,17 @@ namespace Exercises
         */
         public bool ArrayFront9(int[] nums)
         {
-            return false;
+            bool frontNine = false;
+
+            for(int i = 0; i < nums.Length; i++)
+            {
+                if(nums[i]==9 && i < 4)
+                {
+                    frontNine = true;
+                }
+            }
+                  
+            return frontNine;
         }
     }
 }
