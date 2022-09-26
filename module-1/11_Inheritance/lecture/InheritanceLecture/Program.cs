@@ -11,26 +11,30 @@ namespace InheritanceLecture
             Console.WriteLine("Starting a general auction");
             Console.WriteLine("-----------------");
 
-            Auction generalAuction = new Auction();
+            BuyoutAuction reserveAuction = new BuyoutAuction( "watering can", 20);
 
-            generalAuction.PlaceBid(new Bid("Josh", 1));
-            Console.WriteLine("High bidder is " + generalAuction.CurrentHighBid.Bidder);
-            Console.WriteLine("Winning bid is " + generalAuction.CurrentHighBid.BidAmount);
+            //Bid bid = new Bid("Josh", 1);
+            //generalAuction.PlaceBid();
+
+
+            reserveAuction.PlaceBid(new Bid("Josh", 1));
+            Console.WriteLine("High bidder is " + reserveAuction.CurrentHighBid.Bidder);
+            Console.WriteLine("Winning bid is " + reserveAuction.CurrentHighBid.BidAmount);
             Console.WriteLine();
 
-            generalAuction.PlaceBid(new Bid("Fonz", 23));
-            Console.WriteLine("High bidder is " + generalAuction.CurrentHighBid.Bidder);
-            Console.WriteLine("Winning bid is " + generalAuction.CurrentHighBid.BidAmount);
+            reserveAuction.PlaceBid(new Bid("Fonz", 23));
+            Console.WriteLine("High bidder is " + reserveAuction.CurrentHighBid.Bidder);
+            Console.WriteLine("Winning bid is " + reserveAuction.CurrentHighBid.BidAmount);
             Console.WriteLine();
 
-            generalAuction.PlaceBid(new Bid("Rick Astley", 13));
-            Console.WriteLine("High bidder is " + generalAuction.CurrentHighBid.Bidder);
-            Console.WriteLine("Winning bid is " + generalAuction.CurrentHighBid.BidAmount);
+            reserveAuction.PlaceBid(new Bid("Rick Astley", 13));
+            Console.WriteLine("High bidder is " + reserveAuction.CurrentHighBid.Bidder);
+            Console.WriteLine("Winning bid is " + reserveAuction.CurrentHighBid.BidAmount);
             Console.WriteLine();
 
-            generalAuction.PlaceBid(new Bid("Josh", 25));
-            Console.WriteLine("High bidder is " + generalAuction.CurrentHighBid.Bidder);
-            Console.WriteLine("Winning bid is " + generalAuction.CurrentHighBid.BidAmount);
+            reserveAuction.PlaceBid(new Bid("Josh", 25));
+            Console.WriteLine("High bidder is " + reserveAuction.CurrentHighBid.Bidder);
+            Console.WriteLine("Winning bid is " + reserveAuction.CurrentHighBid.BidAmount);
             Console.WriteLine();
 
             //....

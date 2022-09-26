@@ -8,7 +8,7 @@
         public string Bidder { get; }
 
         /// <summary>
-        /// The bid amount.
+        /// The bid amount. In whole dollars.
         /// </summary>
         public int BidAmount { get; }
         /// <summary>
