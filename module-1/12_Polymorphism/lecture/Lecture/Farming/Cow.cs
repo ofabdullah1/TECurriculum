@@ -4,6 +4,14 @@
     {
         public Cow() : base("Cow", "moo")
         {
+
+
         }
+
+        public bool GivesMilk { get; set; } = true;
+
+
+
+
     }
 }
