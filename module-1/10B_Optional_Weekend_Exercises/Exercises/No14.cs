@@ -19,8 +19,14 @@ namespace Exercises
          */
         public bool No14(int[] nums)
         {
-
-            return false;
+            bool result = true;
+            for (int i = 0; i < nums.Length; i++)
+                if (nums[i] == 1 || nums[i] == 4)
+                {
+                    result = false;
+                    return result;
+                }
+            return result;
         }
     }
 }

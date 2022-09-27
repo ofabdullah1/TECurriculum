@@ -19,7 +19,23 @@ namespace Exercises
          */
         public bool Has12(int[] nums)
         {
-            return false;
+
+            bool result2 = false;
+            bool result = false;
+            for (int i=0;i < nums.Length; i ++)
+            {
+                if(nums[i] == 1)
+                {
+                    result = true;
+                  
+                }
+                else if(nums[i] == 2 && result == true)
+                {
+                    result2 = true;
+                }
+            }
+            return result2;
+            
         }
     }
 }

@@ -16,9 +16,20 @@ namespace Exercises
         */
         public bool Has23(int[] nums)
         {
-            return false;
+
+            bool result = false;
+           
+            
+            {
+                if (nums[0] == 2 || nums[0] == 3 || nums[1] ==2 || nums[1]== 3)
+                {
+                    result = true;
+                }
+                
+
+            }
+            return result;
         }
     }
 }
-
 //Stuck? - Here is a solution - https://vimeo.com/501570865/3c6db28fd9

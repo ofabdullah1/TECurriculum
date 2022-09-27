@@ -19,7 +19,16 @@ namespace Exercises
          */
         public bool Double23(int[] nums)
         {
-            return false;
+            bool result = false;
+            if (nums.Length == 2)
+            {
+                if((nums[0] == 2 && nums[1] == 2) || (nums[0] == 3 && nums[1] == 3))
+                    {
+                    result = true;
+                    return result;
+                }
+            }
+            return result;
         }
     }
 }
