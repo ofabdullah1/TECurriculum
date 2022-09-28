@@ -1,6 +1,6 @@
 ﻿namespace BankTellerExercise.Classes
 {
-    public class BankAccount
+    public class BankAccount 
     {
 
         public string AccountHolderName { get; protected set; }

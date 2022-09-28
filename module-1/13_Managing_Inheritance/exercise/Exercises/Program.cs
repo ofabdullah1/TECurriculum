@@ -7,8 +7,8 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            //uncomment after step 1:
-            //List<Wall> walls = new List<Wall>();
+            
+            List<Wall> walls = new List<Wall>();
 
             while (true)
             {

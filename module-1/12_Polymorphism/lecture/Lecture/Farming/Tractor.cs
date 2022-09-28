@@ -4,7 +4,13 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    class Tractor
+    public class Tractor : IMakeSound
     {
+        public string Name { get; } = "Tractor";
+        public string Sound { get; } = "Vroom";
+
     }
+
+
+
 }

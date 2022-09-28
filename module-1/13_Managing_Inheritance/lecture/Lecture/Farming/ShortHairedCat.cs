@@ -4,12 +4,7 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    interface IMakeSound
+    class ShortHairedCat
     {
-
-        string Name { get; }
-        string Sound { get; }
-
-
     }
 }

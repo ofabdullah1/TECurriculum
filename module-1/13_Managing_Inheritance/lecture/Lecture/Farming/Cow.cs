@@ -8,5 +8,10 @@
         {
             Price = 1500;
         }
+
+        public override string EatFood()
+        {
+            return "Chew, chew, chew,...";
+        }
     }
 }

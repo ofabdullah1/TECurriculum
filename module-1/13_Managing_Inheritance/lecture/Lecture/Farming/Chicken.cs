@@ -12,5 +12,10 @@ namespace Lecture.Farming
         {
             Console.WriteLine("Chicken laid an egg!");
         }
+
+        public override string EatFood()
+        {
+            return "Pech, peck, peck...";
+        }
     }
 }
