@@ -1,4 +1,6 @@
-﻿namespace Exercises
+﻿using System;
+
+namespace Exercises
 {
     public class CigarParty
     {
@@ -22,5 +24,7 @@
 
             return successful;
         }
+
+       
     }
 }

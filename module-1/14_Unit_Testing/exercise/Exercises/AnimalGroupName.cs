@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Exercises
 {
@@ -56,6 +57,11 @@ namespace Exercises
             {
                 return "unknown";
             }
+        }
+
+        public string GetHerd(string v1, string v2)
+        {
+            throw new NotImplementedException();
         }
     }
 }

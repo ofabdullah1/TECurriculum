@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    class ShortHairedCat
+    class ShortHairedCat : Cat
     {
+        public ShortHairedCat() :base("Short Haired Cat")
+        { }
     }
 }
