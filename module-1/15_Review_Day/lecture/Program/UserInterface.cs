@@ -6,11 +6,31 @@ namespace CardGame
 {
     class UserInterface
     {
-        private Deck deck = new Deck();
+        private Deck deck = new PinochleDeck();
 
         public void Start()
         {
             bool done = false;
+
+
+            DisplayDeckChoice();
+
+            string choiceInput = Console.ReadLine();
+            
+
+            if(choiceInput == "1")
+            {
+                deck = new PokerDeck();
+                Console.WriteLine("Creating Poker deck");
+            }
+            else
+            {
+                deck = new PinochleDeck();
+                Console.WriteLine("Creating Pinochle Deck");
+            }
+
+            
+
 
             while (!done)
             {
@@ -40,14 +60,24 @@ namespace CardGame
             }
         }
 
+        private void DisplayDeckChoice()
+        {
+            Console.WriteLine("Please choose a deck type.");
+            Console.WriteLine("1 - Poker");
+            Console.WriteLine("2 - Pinochle");
+        }
+
         private void DealACard()
         {
-            Console.WriteLine("Reached DealACard");
+            Card card = deck.DealACard();
+            Console.WriteLine(card);
+            Console.WriteLine();
         }
 
         private void ShuffleTheDeck()
         {
             deck.Shuffle();
+            Console.WriteLine();
         }
 
         private void DisplayTheDeck()

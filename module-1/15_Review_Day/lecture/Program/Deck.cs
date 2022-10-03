@@ -4,32 +4,18 @@ using System.Text;
 
 namespace CardGame
 {
-    class Deck
+    public abstract class Deck
     {
-        private List<Card> Cards { get; set; } = new List<Card>();
+        protected List<Card> Cards { get; set; } = new List<Card>();
 
 
-        private string[] suits = { "Spades", "Diamonds", "Hearts", "Clubs" };
-        private string[] values = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-       
-        public Deck ()
-        {
-            CreateDeck();
-        }
+        protected abstract string[] Suits { get; } 
+        protected abstract string[] Values { get; }
 
-        private void CreateDeck()
-        {
 
-            foreach(string suit in suits)
-            {
-                foreach (string value in values)
-                {
-                    Card card = new Card(suit, value, false);
-                    Cards.Add(card);
-                }
-            }
 
-        }
+        abstract protected void CreateDeck();
+        
 
 
         public string DisplayDeck()
@@ -59,7 +45,10 @@ namespace CardGame
 
         public Card DealACard()
         {
-            throw new NotImplementedException();
+            Card result = Cards[0];
+            Cards.RemoveAt(0);
+
+            return result;
         }
     }
 }

@@ -285,10 +285,161 @@ namespace Exercises.Tests
 
 
 
+    [TestClass]
+    public class Less20Test
+
+    {
+        [TestMethod]
+        public void IsLessThanMultipleOf20()
+        {
+
+            //Arrange
+            Less20 myObject = new Less20();
 
 
 
 
+            //Act
+            bool result = myObject.IsLessThanMultipleOf20(18);
+
+
+            //Assert
+            Assert.AreEqual(true, result);
+
+
+
+
+        }
+
+
+        [TestMethod]
+        public void IsLessThanMultipleOf202()
+        {
+
+            //Arrange
+            Less20 myObject = new Less20();
+
+
+
+
+            //Act
+            bool result = myObject.IsLessThanMultipleOf20(20);
+
+
+            //Assert
+            Assert.AreEqual(false, result);
+
+
+
+
+
+        }
+
+
+
+
+        [TestMethod]
+        public void IsLessThanMultipleOf203()
+        {
+
+            //Arrange
+            Less20 myObject = new Less20();
+
+
+
+
+            //Act
+            bool result = myObject.IsLessThanMultipleOf20(19);
+
+
+            //Assert
+            Assert.AreEqual(true, result);
+
+
+        }
+
+
+
+    }
+
+
+
+    [TestClass]
+    public class Lucky13Test
+
+    {
+        [TestMethod]
+        public void GetLucky()
+        {
+
+            //Arrange
+            Lucky13 myObject = new Lucky13();
+
+
+
+
+            //Act
+           // bool result = myObject.GetLucky([ 0, 2, 4]);
+
+
+            //Assert
+           // Assert.AreEqual(true, result);
+
+
+
+
+        }
+
+
+        [TestMethod]
+        public void GetLucky2()
+        {
+
+            //Arrange
+            Lucky13 myObject = new Lucky13();
+
+
+
+
+            //Act
+           // bool result = myObject.GetLucky2(20);
+
+
+            //Assert
+           // Assert.AreEqual(false, result);
+
+
+
+
+
+        }
+
+
+
+
+        [TestMethod]
+        public void GetLucky3()
+        {
+
+            //Arrange
+           Lucky13 myObject = new Lucky13();
+
+
+
+
+            //Act
+            //bool result = myObject.GetLucky3(19);
+
+
+            //Assert
+            Assert.AreEqual(true, result);
+
+
+        }
+
+
+
+    }
 
 
 

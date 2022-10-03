@@ -6,6 +6,8 @@ namespace CardGame
 {
     public class Card
     {
+        private string v;
+
         public string Suit { get; set; }
         public string Value { get; set; }
         public bool IsFaceUp { get; set; }
@@ -18,6 +20,10 @@ namespace CardGame
             IsFaceUp = isFaceUp;
         }
 
+        public Card(string v)
+        {
+            this.v = v;
+        }
 
         public override string ToString()
         {
