@@ -32,21 +32,21 @@
 
         public bool ReserveSeats(bool forFirstClass, int totalNumberOfSeats)
         {
-           totalNumberOfSeats = AvailableFirstClassSeats + AvailableCoachSeats;
+           
              
            
-            if (forFirstClass && BookedFirstClassSeats < AvailableFirstClassSeats)
+            if (forFirstClass == false && totalNumberOfSeats < TotalCoachSeats)
             {
-                BookedFirstClassSeats += totalNumberOfSeats;
+                BookedCoachSeats = totalNumberOfSeats;
                 return true;
               
             }
-            else if (forFirstClass = false && BookedCoachSeats < AvailableCoachSeats)
+            else if (forFirstClass = true && totalNumberOfSeats < TotalFirstClassSeats)
             {
-                totalNumberOfSeats += BookedCoachSeats;
+                BookedFirstClassSeats = totalNumberOfSeats;
                 return true;
             }
-            return true; 
+            return false; 
         }
 
 

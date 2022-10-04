@@ -15,6 +15,8 @@
             if(!IsOn)
             {
                 IsOn = true;
+                CurrentChannel = 3;
+                CurrentVolume = 2;
             }
             
         }
@@ -32,7 +34,7 @@
 
         public void ChangeChannel(int newChannel)
         {
-            if(IsOn && CurrentChannel >= 3 && CurrentChannel <= 18)
+            if(IsOn && CurrentChannel >= 3 && newChannel <= 18)
             {
                 CurrentChannel = newChannel;
             }
@@ -41,7 +43,7 @@
 
         public void ChannelUp()
         {
-            if (IsOn && CurrentChannel != 18)
+            if (IsOn == true)
             {
                 CurrentChannel += 1;
             }
@@ -54,10 +56,16 @@
 
         public void ChannelDown()
         {
-            if (IsOn && CurrentChannel !=3)
+            if (IsOn == true)
             {
                 CurrentChannel -= 1;
             }
+            else if (CurrentChannel < 3)
+            {
+                CurrentChannel = 18;
+            }
+            
+           
             
             
         }
@@ -73,7 +81,7 @@
 
         public void LowerVolume()
         {
-            if (IsOn && CurrentVolume != 0)
+            if (IsOn && CurrentVolume > 0)
             {
                 CurrentVolume -= 1;
             }
