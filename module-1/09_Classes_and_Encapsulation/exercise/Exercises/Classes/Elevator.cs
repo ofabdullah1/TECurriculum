@@ -3,7 +3,7 @@
     public class Elevator
     {
 
-        public int CurrentLevel { get; private set; } 
+        public int CurrentLevel { get; private set; } = 1;
         public int NumberOfLevels { get; private set; } = 5;
         public bool DoorIsOpen { get; private set; } = false;
 
