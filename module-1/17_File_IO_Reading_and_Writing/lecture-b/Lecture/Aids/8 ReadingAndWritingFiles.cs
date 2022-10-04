@@ -8,7 +8,7 @@ namespace Lecture.Aids
         public static void OpenAndWrite()
         {
             // Figure the full path of the input file and output file
-            string directory = Environment.CurrentDirectory;
+            string directory = @"c:\niceplace";
             string inputFile = "programminglanguages.txt";
             string outputFile = "programminglanguages-FIXED.txt";
             string inputFullPath = Path.Combine(directory, inputFile);

@@ -8,7 +8,7 @@ namespace Lecture
         {
             //ReadingInFiles.ReadACharacterFile();
             //ReadingCSVFiles.ReadFile();
-            //SummingUpNumbers.ReadFile();
+            SummingUpNumbers.ReadFile();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Lecture.Aids
                 {"Ruby", 76.2 },
                 {"Matlab", 72.4 }
             };
-            string directory = Environment.CurrentDirectory;
+            string directory = @"c:\niceplace";
             string filename = "programminglanguages.txt";
             string path = Path.Combine(directory, filename);
 

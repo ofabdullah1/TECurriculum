@@ -100,7 +100,7 @@ namespace TechElevator.Exercises.LogicalBranching
         public double CalculateStayTotal(int numberOfNights, int numOfWeekendNights, bool isRewardsMember)
         {
 
-            if (numberOfNights >= 1 && numOfWeekendNights == 0 && isRewardsMember)
+            if (isRewardsMember)
 
             {
                 double result = numberOfNights * DiscountRate;

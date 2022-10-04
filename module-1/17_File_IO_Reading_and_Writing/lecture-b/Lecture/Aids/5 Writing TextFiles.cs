@@ -12,6 +12,12 @@ namespace Lecture.Aids
         {
 
 
+            using (StreamWriter sw = new StreamWriter("c:\\niceplace\\testoutput.txt", true))
+            {
+                sw.Write(DateTime.Now);
+
+            }
+
             // After the using statement ends, file has now been written
             // and closed for further writing
         }

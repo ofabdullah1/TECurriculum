@@ -8,7 +8,8 @@ namespace Lecture.Aids
         public static void ReadFile()
         {
             // Reading in a file of numbers
-            string folder = Environment.CurrentDirectory;
+           // string folder = Environment.CurrentDirectory;
+            string folder = @"c:\niceplace";
             string filename = "numbers.txt";
             // get the full path
             string fullpath = Path.Combine(folder, filename);
