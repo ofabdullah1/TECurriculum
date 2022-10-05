@@ -53,6 +53,7 @@ namespace FizzWriter
             catch (IOException ex)
             {
                 Console.WriteLine("You have entered an invalid destination file, the program will now stop");
+                Console.WriteLine(ex.Message);
             }
 
 
