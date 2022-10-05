@@ -1,5 +1,7 @@
-﻿using System;
-
+﻿using Assessment.Classes;
+using System;
+using System.Collections.Generic;
+using System.Text;
 namespace Assessment
 {
     public class Program
@@ -8,6 +10,15 @@ namespace Assessment
         {
             // create an object and call methods on it (manual testing) from this class.
             // You DO NOT need to prompt the user to type in any values
+
+            TicketPurchase myTicket = new TicketPurchase("Omar", 2);
+
+
+
+
+
+
         }
+
     }
 }
