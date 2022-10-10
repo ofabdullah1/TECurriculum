@@ -7,15 +7,15 @@ namespace Assessment.Classes
     public class TicketPurchase
     {
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public int NumberOfTickets { get; set; }
+        public int NumberOfTickets { get; private set; }
 
-        public double BasePrice
+        public decimal BasePrice
         {
             get
             {
-                return NumberOfTickets * 59.99;
+                return NumberOfTickets * 59.99M;
             }
         }
 
@@ -33,38 +33,35 @@ namespace Assessment.Classes
 
 
 
-        public virtual int GetPrice(bool earlyCheckIn, bool priorityRideAccess)
+        public decimal GetPrice(bool earlyCheckIn, bool priorityRideAccess)
         {
-            if(earlyCheckIn && priorityRideAccess)
+
+            decimal price = BasePrice;
+
+
+            if (earlyCheckIn)
             {
 
-                double result = (BasePrice + 60.00);
-                
-               
+                price += (NumberOfTickets * 10);
+
+
             }
-            else if(earlyCheckIn && !priorityRideAccess)
+            if (priorityRideAccess)
             {
-               double result = (BasePrice + 10.00);
-                
-            }
-            else if(!earlyCheckIn && priorityRideAccess)
-            {
-                double result = (double)(BasePrice + 50.00);
-              
-                
-            }
-            else
-            {
-                double result = BasePrice * NumberOfTickets;
-                
-                
+                price = NumberOfTickets * 10;
+
             }
 
-            return 0;
-            
-            
-            
+            return price;
+        
             
         }
+
+        public override string ToString()
+        {
+            return $"Ticket - {Name} - {BasePrice}";
+        }
+
+
     }
 }

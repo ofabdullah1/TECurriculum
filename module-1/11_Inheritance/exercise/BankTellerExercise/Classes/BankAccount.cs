@@ -7,7 +7,9 @@
         public string AccountNumber { get;  set; }
         public decimal Balance { get; protected set; } = 0;
 
-       
+
+        BankAccount myAccount = new BankAccount("Omar", "234");
+
 
 
 

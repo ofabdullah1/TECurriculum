@@ -20,7 +20,10 @@ namespace Exercises
         }
 
 
-
+        SquareWall squareWall = new SquareWall("Wally", "Red", 5);
+        
+        
+        
 
     }
 }

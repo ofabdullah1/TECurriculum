@@ -9,7 +9,8 @@ namespace Exercises
         {
             
             List<Wall> walls = new List<Wall>();
-
+            SquareWall coolSquare = new SquareWall("omar", "red", 5);
+            coolSquare.GetArea();
             while (true)
             {
                 Console.WriteLine("[1] Add a wall");

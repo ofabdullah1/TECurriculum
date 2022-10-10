@@ -23,18 +23,18 @@ namespace FindAndReplace
 
 
             // Figure the full path of the input file and output file
-            string directory = @"c:\niceplace";
+            //string directory = @"c:\niceplace";
             //string inputFile = "programminglanguages.txt";
             //string outputFile = "programminglanguages-FIXED2.txt";
-            string inputFullPath = Path.Combine(directory, inputFile);
-            string outputFullPath = Path.Combine(directory, outputFile);
+           // string inputFullPath = Path.Combine(inputFile);
+            //string outputFullPath = Path.Combine(outputFile);
             
 
             // Open the existing file with the typo using a StreamReader
-            using (StreamReader sr = new StreamReader(inputFullPath))
+            using (StreamReader sr = new StreamReader(inputFile))
             {
                 // Open a StreamWriter where we will output the file
-                using (StreamWriter sw = new StreamWriter(outputFullPath, true))
+                using (StreamWriter sw = new StreamWriter(outputFile))
                 {
                     // For each line in the input file, read it in
                     while (!sr.EndOfStream)

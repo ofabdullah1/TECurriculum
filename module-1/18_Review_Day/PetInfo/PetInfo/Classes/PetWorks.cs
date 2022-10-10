@@ -62,6 +62,9 @@ namespace PetInfo
             if (pets.ContainsKey(id))
             {
                 pets.Remove(id);
+                Pet[] updatedPets = GetPets();
+                data.SetPets(updatedPets);
+
                 result = true;
             }
 

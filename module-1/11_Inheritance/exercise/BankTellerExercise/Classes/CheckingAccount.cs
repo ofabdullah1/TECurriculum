@@ -15,7 +15,7 @@
 
         }
 
-
+        CheckingAccount myFavAccount = new CheckingAccount("Omar", "123", 99);
        
 
 

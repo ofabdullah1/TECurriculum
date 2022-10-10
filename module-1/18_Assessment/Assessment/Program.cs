@@ -13,8 +13,9 @@ namespace Assessment
 
             TicketPurchase myTicket = new TicketPurchase("Omar", 2);
 
+            decimal myPrice = myTicket.GetPrice(false, false);
 
-
+            Console.WriteLine(myPrice.ToString());
 
 
 

@@ -32,6 +32,28 @@ namespace PetInfo
 
             return pets.ToArray();
         }
+
+
+        public bool SetPets(Pet[] updatedPets)
+        {
+            bool result = false;
+
+            using( StreamWriter sw = new StreamWriter(filename,false))
+            {
+                foreach(Pet item in updatedPets)
+                {
+                    string line = $"{item.Id}, {item.Name},{item.Type},{item.Breed}";
+                    sw.WriteLine(line);
+                }
+
+
+
+
+            }
+
+
+            return result;
+        }
     }
 }
 
