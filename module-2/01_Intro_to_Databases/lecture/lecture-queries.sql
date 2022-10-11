@@ -76,7 +76,7 @@ SELECT state_name, census_region FROM state WHERE census_region IS NOT NULL AND 
 SELECT * FROM city WHERE state_abbreviation IN ('CA', 'FL')
 
 -- The names, areas, and populations of cities in New England -- Connecticut (CT), Maine (ME), Massachusetts (MA), New Hampshire (NH), Rhode Island (RI) and Vermont (VT)
-
+SELECT city_name, area, population FROM city WHERE state_abbreviation IN ('CT', 'ME', 'MA', 'NH', 'RI', 'VT')
 
 
 -- SELECT statements involving math
@@ -133,3 +133,4 @@ SELECT * FROM park WHERE area BETWEEN 100 AND 200;
 
 SELECT * FROM park WHERE date_established < '1900-01-01'
 
+SELECT * FROM city WHERE population < 100000;
