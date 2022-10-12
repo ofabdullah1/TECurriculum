@@ -104,8 +104,26 @@ WHERE s.census_region = 'Midwest'
 
 -- Write a query to retrieve the state name and the earliest date a park was established in that state (or territory) for every record in the state table that has park records associated with it.
 
+SELECT * FROM state as s
+JOIN park_state AS ps ON ps.state_abbreviation = s.state_abbreviation
+JOIN park AS p ON p.park_id = ps.park_id
+
+
+SELECT state_name, min(p.date_established) FROM state as s
+JOIN park_state AS ps ON ps.state_abbreviation = s.state_abbreviation
+JOIN park AS p ON p.park_id = ps.park_id
+GROUP BY state_name
+
+
 
 -- Modify the previous query so the results include entries for all the records in the state table, even if they have no park records associated with them.
+
+SELECT state_name, min(p.date_established) FROM state as s
+LEFT JOIN park_state AS ps ON ps.state_abbreviation = s.state_abbreviation
+LEFT JOIN park AS p ON p.park_id = ps.park_id
+GROUP BY state_name
+
+
 
 
 
