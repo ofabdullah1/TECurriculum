@@ -109,6 +109,7 @@ SELECT state_abbreviation, COUNT(*) AS number_of_cities FROM city GROUP BY state
 
 SELECT state_abbreviation, COUNT(*) AS number_of_cities FROM city GROUP BY state_abbreviation ORDER BY number_of_cities DESC;
 
+SELECT state_abbreviation, COUNT(*) AS number_of_cities FROM city GROUP BY state_abbreviation;
 
 -- Determine the average park area depending upon whether parks allow camping or not.
 
