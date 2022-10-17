@@ -151,4 +151,11 @@ WHERE state_abbreviation = 'CA';
 -- Demonstrate two different SQL connections trying to access the same table where one is inside of a transaction but hasn't committed yet.
 
 
-SELEC
+SELECT * FROM park_state
+
+BEGIN TRANSACTION
+
+SELECT *
+FROM park_state;
+
+ROLLBACK TRANSACTION

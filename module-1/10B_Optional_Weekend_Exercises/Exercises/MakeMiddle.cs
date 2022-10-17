@@ -18,9 +18,17 @@ namespace Exercises
         */
         public int[] MakeMiddle(int[] nums)
         {
-            return new int[] { };
+            int[] result = new int[2];
+
+            int startingIndex = (nums.Length / 2) - 1;
+
+            result[0] = nums[startingIndex];
+            result[1] = nums[startingIndex + 1];
+
+            return result;
+            
+             
         }
     }
 }
-
 //Stuck? - Here is a solution - https://vimeo.com/501752732/576a651407

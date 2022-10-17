@@ -18,7 +18,11 @@ namespace Exercises
          */
         public int[] SwapEnds(int[] nums)
         {
-            return new int[] { };
+            int temps = nums[0];
+            nums[0] = nums[nums.Length - 1];
+            nums[nums.Length - 1] = temps;
+
+            return nums;
         }
 
 
