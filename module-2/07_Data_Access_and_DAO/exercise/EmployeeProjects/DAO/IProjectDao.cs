@@ -32,4 +32,9 @@ namespace EmployeeProjects.DAO
         /// <param name="projectId">The id of the project to remove.</param>
         void DeleteProject(int projectId);
     }
+
+
+    
+
+
 }
