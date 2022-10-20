@@ -16,15 +16,16 @@ namespace WorldGeography.Tests
         public void GetLanguagesTest(string countryCode, int expectedCount)
         {
             // Arrange
+            LanguageSqlDAO dao = new LanguageSqlDAO(ConnectionString);
 
 
 
             // Act
-
+            IList<Language> languages = dao.GetLanguages(countryCode);
 
 
             // Assert
-            Assert.Fail(); //remove me
+            Assert.AreEqual(expectedCount, languages.Count); //remove me
 
 
         }

@@ -80,6 +80,13 @@ namespace EmployeeProjects.DAO
             {
                 conn.Open();
 
+
+                SqlCommand cod = new SqlCommand("DELETE FROM project_employee WHERE project_id = @project_id;", conn);
+                cod.Parameters.AddWithValue("@project_id", projectId);
+
+                cod.ExecuteNonQuery();
+
+
                 SqlCommand cmd = new SqlCommand("DELETE FROM project WHERE project_id = @project_id;", conn);
                 cmd.Parameters.AddWithValue("@project_id", projectId);
 

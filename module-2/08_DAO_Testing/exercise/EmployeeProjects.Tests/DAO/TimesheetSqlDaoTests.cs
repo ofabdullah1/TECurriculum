@@ -27,13 +27,18 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void GetTimesheet_ReturnsCorrectTimesheetForId()
         {
-            //Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(1);
+            AssertTimesheetsMatch(TIMESHEET_1, timesheet);
+
+            timesheet = dao.GetTimesheet(2);
+            AssertTimesheetsMatch(TIMESHEET_2, timesheet);
         }
 
         [TestMethod]
         public void GetTimesheet_ReturnsNullWhenIdNotFound()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(99);
+            Assert.IsNull(timesheet);
         }
 
         [TestMethod]
@@ -57,13 +62,48 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void CreatedTimesheetHasExpectedValuesWhenRetrieved()
         {
-            Assert.Fail();
+            Timesheet timesheet = new Timesheet();
+            timesheet.TimesheetId = 1;
+            timesheet.EmployeeId = 1;
+            timesheet.ProjectId = 1;
+            timesheet.DateWorked = DateTime.Parse("2021-01-01");
+            timesheet.HoursWorked = 1.0M;
+            timesheet.IsBillable = true;
+            timesheet.Description = "Timesheet 1";
+
+
+           
+
+            Timesheet createdTimesheet = dao.CreateTimesheet(timesheet);
+
+
+            int newId = createdTimesheet.ProjectId;
+            Timesheet retrievedTimesheet = dao.GetTimesheet(newId);
+
+            Assert.AreEqual(timesheet.EmployeeId, retrievedTimesheet.EmployeeId);
+            Assert.AreEqual(timesheet.ProjectId, retrievedTimesheet.ProjectId);
+
+
         }
 
         [TestMethod]
         public void UpdatedTimesheetHasExpectedValuesWhenRetrieved()
         {
-            Assert.Fail();
+            Timesheet timesheet = dao.GetTimesheet(1);
+
+            timesheet.TimesheetId = 1;
+            timesheet.EmployeeId = 1;
+            timesheet.ProjectId = 1;
+            timesheet.DateWorked = DateTime.Parse("2021-01-01");
+            timesheet.HoursWorked = 1.0M;
+            timesheet.IsBillable = true;
+            timesheet.Description = "Timesheet 1";
+
+            dao.UpdateTimesheet(timesheet);
+
+            Timesheet retrievedtimesheet = dao.GetTimesheet(1);
+            AssertTimesheetsMatch(timesheet, retrievedtimesheet);
+
         }
 
         [TestMethod]
@@ -75,7 +115,11 @@ namespace EmployeeProjects.Tests.DAO
         [TestMethod]
         public void GetBillableHours_ReturnsCorrectTotal()
         {
-            Assert.Fail();
+            Decimal timesheets = dao.GetBillableHours(2,2);
+
+            Assert.AreEqual(0M, timesheets);
+
+
         }
 
         private void AssertTimesheetsMatch(Timesheet expected, Timesheet actual)
