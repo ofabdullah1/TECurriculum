@@ -5,17 +5,6 @@ using System.IO;
 
 namespace DadabaseApp
 {
-    // Matt's TODO List
-
-    // Part 1: Create a Joke table and a HumorLevel table
-    // Part 2: Script a few jokes and humor levels
-    // Part 3: Connect the UI to the DAO
-    // Part 4: List all jokes with their humor level text
-    // Part 5: Insert a joke
-    // Part 6: Modify a Joke
-    // Part 7: ???
-    // Part 8: Profit!!!
-
     /// <summary>
     /// This class is responsible for all user input and menu code.
     /// </summary>
@@ -43,7 +32,7 @@ namespace DadabaseApp
 
                 Console.WriteLine("1) List Dad Jokes");
                 Console.WriteLine("2) Add a Dad Joke");
-                Console.WriteLine("3) Get Dad Jokes by Dad");
+                Console.WriteLine("3) Update a Dad Joke"); // Or ALL dad jokes if we're going late
                 Console.WriteLine("4) Quit");
                 Console.WriteLine();
 
@@ -60,7 +49,7 @@ namespace DadabaseApp
                         throw new NotImplementedException();
                         break;
 
-                    case "3": // Get Dad Jokes by Dad
+                    case "3": // Update
                         throw new NotImplementedException();
                         break;
 
