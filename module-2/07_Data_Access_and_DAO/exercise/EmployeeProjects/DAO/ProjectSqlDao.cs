@@ -91,6 +91,7 @@ namespace EmployeeProjects.DAO
                 cmd.Parameters.AddWithValue("@project_id", projectId);
 
                 cmd.ExecuteNonQuery();
+            
             }
 
         }

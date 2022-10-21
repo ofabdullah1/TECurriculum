@@ -36,7 +36,8 @@ namespace EmployeeProjects.DAO
 
         public IList<Employee> SearchEmployeesByName(string firstNameSearch, string lastNameSearch)
         {
-            return new List<Employee>() { new Employee() };
+           
+
         }
 
         public IList<Employee> GetEmployeesByProjectId(int projectId)
