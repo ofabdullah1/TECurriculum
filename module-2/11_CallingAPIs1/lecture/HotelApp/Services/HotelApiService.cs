@@ -8,7 +8,7 @@ namespace HotelApp.Services
 {
     public class HotelApiService
     {
-        protected static RestClient client = null;
+        private RestClient client;
 
         public HotelApiService(string apiUrl)
         {

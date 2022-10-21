@@ -7,8 +7,8 @@ namespace HotelApp
 {
     public class HotelApp
     {
-        private readonly HotelApiService hotelApiService;
-        private readonly HotelConsoleService console = new HotelConsoleService();
+        private HotelApiService hotelApiService;
+        private HotelConsoleService console = new HotelConsoleService();
 
         public HotelApp(string apiURL)
         {
@@ -51,7 +51,7 @@ namespace HotelApp
                         break;
 
                     case 6: // Public API Query
-                        PrintCity();
+                        CallStarWarsAPI();
                         break;
                 }
             }
@@ -107,13 +107,10 @@ namespace HotelApp
             console.Pause();
         }
 
-        private void PrintCity()
+        private void CallStarWarsAPI()
         {
-            City city = hotelApiService.GetPublicAPIQuery();
-            if (city != null)
-            {
-                console.PrintCity(city);
-            }
+            console.PrintError("Not Implemented");
+
             console.Pause();
         }
     }

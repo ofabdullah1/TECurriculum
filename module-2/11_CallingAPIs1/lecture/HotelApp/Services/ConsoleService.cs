@@ -23,7 +23,7 @@ namespace HotelApp.Services
         /// Prints a success message to the screen, in green text.
         /// </summary>
         /// <param name="message">Message to print.</param>
-        internal void PrintSuccess(string message)
+        public void PrintSuccess(string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(message);
