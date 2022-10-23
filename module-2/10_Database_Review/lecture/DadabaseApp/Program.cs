@@ -16,10 +16,10 @@ namespace DadabaseApp
                 // Create the Data Access Object
                 JokesDAO jokes = new JokesDAO(connectionString);
 
-                // TODO: Do something with the jokesDAO
+              
 
                 // Create and run the user interface
-                UserInterface ui = new UserInterface();
+                UserInterface ui = new UserInterface(jokes);
                 ui.ShowMainMenu();
             }
             catch (SqlException ex)

@@ -5,11 +5,22 @@ using System.IO;
 
 namespace DadabaseApp
 {
+
+
     /// <summary>
     /// This class is responsible for all user input and menu code.
     /// </summary>
     public class UserInterface
     {
+
+
+        private JokesDAO jokes;
+
+        public UserInterface(JokesDAO dao)
+        {
+            this.jokes = dao;
+        }
+
         /// <summary>
         /// Lists main menu options for the user.
         /// </summary>
@@ -42,15 +53,15 @@ namespace DadabaseApp
                 switch (input)
                 {
                     case "1": // List Dad Jokes
-                        throw new NotImplementedException();
+                        ListAllDadJokes();
                         break;
 
                     case "2": // Add a Dad Joke
-                        throw new NotImplementedException();
+                        AddJoke();
                         break;
 
                     case "3": // Update
-                        throw new NotImplementedException();
+                        UpdateAllJokes();
                         break;
 
                     case "4": // Quit
@@ -62,6 +73,50 @@ namespace DadabaseApp
                         Console.WriteLine("That's not a thing. Go think about what you did.");
                         break;
                 }
+            }
+        }
+
+
+
+        public void UpdateAllJokes()
+        {
+            // Call to the database to update all jokes
+            int modifiedCount = jokes.UpdateAllJokes(1);
+
+            // Display the # of updated jokes
+            Console.WriteLine("Marked " + modifiedCount + "joke(s) as atrocities");
+        }
+
+        public void AddJoke()
+        {
+            // Ask the user for info about the joke
+            Joke joke = new Joke();
+            Console.WriteLine("Whats the joke setup?");
+            string setup = Console.ReadLine();
+
+            Console.WriteLine("Whats the joke's punchline?");
+            string punchline = Console.ReadLine();
+
+            joke.Setup = setup;
+            joke.Punchline = punchline;
+            joke.HumorLevelId = 4; // Default to a slightly funny level
+
+            // Add the joke to the database
+            int id = jokes.InsertJoke(joke);
+
+            // Display the ID of the new joke to the user
+            Console.WriteLine("This joke has an ID of " + id);
+        }
+
+        public void ListAllDadJokes()
+        {
+            //Get a list of dad jokes
+            List<Joke> alljokes = this.jokes.GetAllJokes();
+
+            // Loop over the list of dad jokes and pring each one to the screen
+            foreach (Joke badJoke in alljokes)
+            {
+                Console.WriteLine(badJoke);
             }
         }
     }
