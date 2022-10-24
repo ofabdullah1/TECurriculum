@@ -1,5 +1,6 @@
 ﻿using HotelApp.Models;
 using HotelApp.Services;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 
@@ -109,7 +110,18 @@ namespace HotelApp
 
         private void CallStarWarsAPI()
         {
-            console.PrintError("Not Implemented");
+            // GET to https://swapi.dev/api/starships/9
+            RestRequest request = new RestRequest("https://swapi.dev/api/starships/9");
+
+            RestClient client = new RestClient();
+            IRestResponse<Starship> response = client.Get<Starship>(request);
+
+            Starship deathStar = response.Data;
+
+            Console.WriteLine(deathStar.Name);
+            Console.WriteLine(deathStar.Model);
+            Console.WriteLine(deathStar.Manufacturer);
+
 
             console.Pause();
         }
