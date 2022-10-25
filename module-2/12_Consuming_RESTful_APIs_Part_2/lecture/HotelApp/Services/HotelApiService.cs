@@ -58,17 +58,35 @@ namespace HotelReservationsClient.Services
 
         public Reservation AddReservation(Reservation newReservation)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest("reservations");
+
+            request.AddJsonBody(newReservation);
+
+            IRestResponse response = client.Post(request);
+
+            CheckForError(response, "Add reservation");
+            return newReservation;
         }
 
         public Reservation UpdateReservation(Reservation reservationToUpdate)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest($"reservations/{reservationToUpdate.Id}");
+
+            request.AddJsonBody(reservationToUpdate);
+
+            IRestResponse response = client.Put(request);
+
+            CheckForError(response, "Change reservation");
+            return reservationToUpdate;
         }
 
         public bool DeleteReservation(int reservationId)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest($"reservations/{reservationId}");
+            IRestResponse response = client.Delete(request);
+
+            CheckForError(response, "Delete reservation");
+            return true;
         }
 
         /// <summary>
