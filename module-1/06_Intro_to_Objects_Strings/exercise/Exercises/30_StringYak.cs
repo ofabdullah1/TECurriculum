@@ -11,7 +11,11 @@
         */
         public string StringYak(string str)
         {
-            return null;
+            string noYak = "";
+
+            noYak = str.Replace("yak", "");
+
+            return noYak;
         }
     }
 }

@@ -22,7 +22,14 @@ namespace Exercises
          */
         public int[] FizzArray(int n)
         {
-            return new int[] { };
+            int[] result = new int[n];
+
+            for(int i = 0; i < result.Length; i++)
+            {
+                result[i] = i;
+            }
+
+            return result;
         }
     }
 }

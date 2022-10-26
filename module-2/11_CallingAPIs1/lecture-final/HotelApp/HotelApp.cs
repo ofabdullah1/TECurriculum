@@ -119,7 +119,7 @@ namespace HotelApp
             Starship deathStar = response.Data;
 
             Console.WriteLine(deathStar.Name);
-            Console.WriteLine(deathStar.Modell);
+            Console.WriteLine(deathStar.Model);
             Console.WriteLine(deathStar.Manufacturer);
 
             console.Pause();
