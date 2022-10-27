@@ -58,15 +58,13 @@ namespace AuctionApp.Controllers
 
             return NotFound();
             
-
-            
         }
 
 
         [HttpPut("{id}")]
         public ActionResult<Auction> Update(int id, Auction auction)
         {
-            var result = dao.Get(id);
+            var result = dao.Update(id, auction);
 
             if(result == null)
             {
