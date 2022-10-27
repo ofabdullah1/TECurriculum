@@ -7,8 +7,10 @@ namespace HotelReservations.Models
     {
         public int Id { get; set; }
 
+        [Range (1,1000000)]
         public int HotelId { get; set; }
 
+        [Required]
         public string FullName { get; set; }
 
         public DateTime CheckinDate { get; set; }
