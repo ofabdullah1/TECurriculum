@@ -44,7 +44,7 @@ namespace AuctionApp.Controllers
             }
             else
             {
-            return dao.List();
+                return dao.List();
             }
             
         }
