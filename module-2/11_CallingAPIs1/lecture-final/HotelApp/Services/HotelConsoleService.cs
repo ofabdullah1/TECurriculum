@@ -20,6 +20,8 @@ namespace HotelApp.Services
             Console.WriteLine("4: List Reviews for Hotel ID 1");
             Console.WriteLine("5: List Hotels with star rating 3");
             Console.WriteLine("6: Public API Query");
+            Console.WriteLine("7: Public NBA API Query");
+            
             Console.WriteLine("0: Exit");
             Console.WriteLine("---------");
         }

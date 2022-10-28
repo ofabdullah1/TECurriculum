@@ -19,7 +19,21 @@ namespace Exercises
          */
         public int GreenTicket(int a, int b, int c)
         {
-            return 0;
+            int result = 0;
+            
+            if(a != b && b!= c)
+            {
+                result = 0;
+            }
+            if(a == b && b == c)
+            {
+                result = 20;
+            }
+            if(a == b && b != c || b == c && b!= a || c == a && c != b)
+            {
+                result = 10;
+            }
+            return result;
         }
     }
 }

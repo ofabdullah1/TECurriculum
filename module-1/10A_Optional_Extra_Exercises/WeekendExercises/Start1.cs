@@ -17,7 +17,18 @@ namespace Exercises
          */
         public int Start1(int[] a, int[] b)
         {
-            return 0;
+            int firstOne = 0;
+
+            if(a.Length > 0 && a[0] == 1)
+            {
+                firstOne += 1;
+            }
+            if(b.Length >0 && b[0] == 1)
+            {
+                firstOne += 1;
+            }
+
+            return firstOne;
         }
     }
 }

@@ -54,6 +54,10 @@ namespace HotelApp
                     case 6: // Public API Query
                         CallStarWarsAPI();
                         break;
+
+                    case 7: // Public API Query
+                        CallNbaAPI();
+                        break;
                 }
             }
         }
@@ -121,6 +125,25 @@ namespace HotelApp
             Console.WriteLine(deathStar.Name);
             Console.WriteLine(deathStar.Model);
             Console.WriteLine(deathStar.Manufacturer);
+
+            console.Pause();
+        }
+
+        private void CallNbaAPI()
+        {
+            // GET to https://www.balldontlie.io/api/v1/players/237
+            RestRequest request = new RestRequest("https://www.balldontlie.io/api/v1/players/237");
+
+            RestClient client = new RestClient();
+            IRestResponse<Player> response = client.Get<Player>(request);
+
+            Player lebronJames = response.Data;
+
+            Console.WriteLine(lebronJames.firstName);
+            Console.WriteLine(lebronJames.lastName);
+            Console.WriteLine(lebronJames.Team);
+          
+            
 
             console.Pause();
         }
