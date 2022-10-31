@@ -21,6 +21,7 @@ namespace HotelReservationsClient.Services
             user.Token = response.Data.Token;
 
             // TODO: Set the token on the client
+            client.Authenticator = new JwtAuthenticator(user.Token);
 
             return true;
         }
@@ -28,6 +29,8 @@ namespace HotelReservationsClient.Services
         public void Logout()
         {
             user = new ApiUser();
+
+            client.Authenticator = new JwtAuthenticator("");
 
             // TODO: Remove the token from the client
 

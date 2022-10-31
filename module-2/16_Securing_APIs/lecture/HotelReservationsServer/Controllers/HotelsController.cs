@@ -18,6 +18,7 @@ namespace HotelReservations.Controllers
             this.hotelDao = hotelDao;
         }
 
+        [AllowAnonymous]
         [HttpGet()]
         public List<Hotel> ListHotels()
         {
@@ -39,6 +40,7 @@ namespace HotelReservations.Controllers
             }
         }
 
+        [Authorize(Roles = "admin,supervisor")]
         [HttpGet("filter")]
         public List<Hotel> FilterByStateOrCity(string state, string city)
         {

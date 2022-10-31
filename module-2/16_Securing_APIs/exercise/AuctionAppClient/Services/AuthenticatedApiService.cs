@@ -22,7 +22,13 @@ namespace AuctionApp.Services
         public ApiUser Login(string submittedName, string submittedPass)
         {
             // Create the "POST login" request
-            IRestResponse<ApiUser> response = null;
+            LoginUser loginUser = new LoginUser { Username = submittedName, Password = submittedPass };
+            RestRequest request = new RestRequest("login");
+            request.AddJsonBody(loginUser);
+
+
+
+            IRestResponse<ApiUser> response = client.Post<ApiUser>(request); 
 
             CheckForError(response);
             user.Token = response.Data.Token;
@@ -59,12 +65,26 @@ namespace AuctionApp.Services
             }
             else if (!response.IsSuccessful)
             {
-                // Set an appropriate error message
-                message = $"An http error occurred. Status code {(int)response.StatusCode} {response.StatusDescription}";
-
-
-                // Throw an HttpRequestException with the appropriate message
+                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    message = $"Authorization is required and the user has not logged in.";
+                    throw new HttpRequestException(message, response.ErrorException);
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                {
+                    message = $"The user does not have permission.";
+                    throw new HttpRequestException(message, response.ErrorException);
+                }
+                else
+                {
+                    message = $"An http error occurred.";
+                    throw new HttpRequestException(message, response.ErrorException);
+                }
+              
             }
+            
+
+
         }
     }
 }
