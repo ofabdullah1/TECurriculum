@@ -30,5 +30,26 @@ namespace PetInfoClient.APIServices
                 return response.Data;
             }
         }
+
+        public bool DeletePet(int petId)
+        {
+            bool result = false;
+            RestRequest request = new RestRequest(API_URL + petId);
+            IRestResponse response = client.Delete(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                throw new Exception("Error occurred - unable to reach server.");
+            }
+            else if (!response.IsSuccessful)
+            {
+                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return true;
+            }
+
+            return result;
+        }
     }
 }

@@ -16,12 +16,14 @@ namespace HotelReservations.Controllers
             this.hotelDao = hotelDao;
         }
 
-        [HttpGet()]
+        // Get that takes in /hotels
+        [HttpGet]
         public List<Hotel> ListHotels()
         {
             return hotelDao.List();
         }
 
+        // Get that takes in /hotels/3 --
         [HttpGet("{id}")]
         public ActionResult<Hotel> GetHotel(int id)
         {
@@ -36,6 +38,9 @@ namespace HotelReservations.Controllers
                 return NotFound();
             }
         }
+
+        // Get that takes in /hotels/filter
+        // Get that takes in /hotels/filter?state=oh&city=columbus
 
         [HttpGet("filter")]
         public List<Hotel> FilterByStateOrCity(string state, string city)

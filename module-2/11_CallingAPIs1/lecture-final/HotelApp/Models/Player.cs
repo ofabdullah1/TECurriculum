@@ -9,7 +9,8 @@ namespace HotelApp.Models
         public string firstName { get; set; }
 
         public string lastName { get; set; }
-        public string Team { get; set; }
+
+        public string position { get; set; }
         
 
 

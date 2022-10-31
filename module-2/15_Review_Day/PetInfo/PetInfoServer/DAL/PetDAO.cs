@@ -11,6 +11,7 @@ namespace PetInfoServer.DAL
         private string connectionString;
 
         private string sqlGetPets = "SELECT * FROM pets;";
+        private string sqlDeletePet = "DELETE FROM pets WHERE id = @id";
 
         public PetDAO(string connectionString)
         {
@@ -46,6 +47,37 @@ namespace PetInfoServer.DAL
             return pets;
         }
 
+
+        public bool DeletePet(int petId)
+        {
+
+
+            bool result = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sqlDeletePet, conn);
+
+                    cmd.Parameters.AddWithValue("@id", petId);
+
+                    int count = cmd.ExecuteNonQuery();
+
+                    if(count > 0)
+                    {
+                        result = true;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+
+            return result;
+        }
         private Pet ReaderToPet(SqlDataReader reader)
         {
             Pet pet = new Pet();
@@ -55,5 +87,12 @@ namespace PetInfoServer.DAL
             pet.Breed = Convert.ToString(reader["breed"]);
             return pet;
         }
+
+
+
+
+
+
+
     }
 }

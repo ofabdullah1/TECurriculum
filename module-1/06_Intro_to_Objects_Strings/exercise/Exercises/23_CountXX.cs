@@ -10,7 +10,17 @@
         */
         public int CountXX(string str)
         {
-            return 0;
+            int xCount = 0;
+
+            for(int i = 0; i < str.Length-1;i++)
+            {
+                string RealString = str.Substring(i, i + 2);
+                if (RealString.Equals("xx"))
+                {
+                    xCount += 1;
+                }
+            }
+            return xCount;
         }
     }
 }

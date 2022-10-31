@@ -26,5 +26,25 @@ namespace PetInfoServer.Controllers
         {
             return Ok(petDAO.GetPets());
         }
+
+        //DELETE /pet/3
+
+        [HttpDelete("{petId}")]
+        public ActionResult deletePet(int petId)
+        {
+
+            bool result = petDAO.DeletePet(petId);
+            if (result)
+            {
+                return Ok();
+            }
+                else
+            {
+                return NotFound();
+            }
+
+
+        }
+
     }
 }

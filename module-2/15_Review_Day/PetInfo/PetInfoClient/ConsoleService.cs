@@ -139,21 +139,23 @@ namespace WorldClient
 
         private void DeleteAPet()
         {
-            Console.WriteLine("Not yet available.");
+            //Console.WriteLine("Not yet available.");
 
-            //Console.WriteLine("Please select the pet to delete.");
-            //ListPets();
-            //Console.Write("Please enter a pet number: ");
-            //int petNumber = int.Parse(Console.ReadLine());
-            //bool result = petDepot.DeletePet(petNumber);
-            //if (result)
-            //{
-            //    Console.WriteLine("Deleted.");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("ERROR: Unable to delete.");
-            //}
+            //todo handle exceptions
+
+            Console.WriteLine("Please select the pet to delete.");
+            ListPets();
+            Console.Write("Please enter a pet number: ");
+            int petNumber = int.Parse(Console.ReadLine());
+            bool result = petAPIService.DeletePet(petNumber);
+            if (result)
+            {
+                Console.WriteLine("Deleted.");
+            }
+            else
+            {
+                Console.WriteLine("ERROR: Unable to delete.");
+            }
 
         }
 

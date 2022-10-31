@@ -9,5 +9,6 @@ namespace PetInfoServer.DAL.Interfaces
     public interface IPetDAO
     {
         List<Pet> GetPets();
+        bool DeletePet(int petId);
     }
 }

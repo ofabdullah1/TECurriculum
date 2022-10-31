@@ -14,6 +14,7 @@ namespace HotelApp
         public HotelApp(string apiURL)
         {
             this.hotelApiService = new HotelApiService(apiURL);
+            
         }
 
         public void Run()
@@ -22,7 +23,7 @@ namespace HotelApp
             while (keepGoing)
             {
                 console.PrintMainMenu();
-                int menuSelection = console.PromptForInteger("Please choose an option", 0, 6);
+                int menuSelection = console.PromptForInteger("Please choose an option", 0, 7);
 
                 switch (menuSelection)
                 {
@@ -131,21 +132,33 @@ namespace HotelApp
 
         private void CallNbaAPI()
         {
-            // GET to https://www.balldontlie.io/api/v1/players/237
-            RestRequest request = new RestRequest("https://www.balldontlie.io/api/v1/players/237");
+            // GET to https://www.balldontlie.io/api/v1/players/236
+            RestRequest request = new RestRequest("https://www.balldontlie.io/api/v1/players/236");
 
             RestClient client = new RestClient();
             IRestResponse<Player> response = client.Get<Player>(request);
 
-            Player lebronJames = response.Data;
+            Player player = response.Data;
 
-            Console.WriteLine(lebronJames.firstName);
-            Console.WriteLine(lebronJames.lastName);
-            Console.WriteLine(lebronJames.Team);
+            Console.WriteLine(player.firstName);
+            Console.WriteLine(player.lastName);
+            Console.WriteLine(player.position);
+           
           
             
 
             console.Pause();
         }
+        private void ShowPlayerDetails(int playerId)
+        {
+           // Player player = NbaApiService.GetPlayer(playerId);
+           // if (player != null)
+            {
+           //     console.PrintHotel(player);
+            }
+            console.Pause();
+        }
+
+
     }
 }
