@@ -36,7 +36,25 @@ namespace EmployeeProjects.DAO
 
         public IList<Employee> SearchEmployeesByName(string firstNameSearch, string lastNameSearch)
         {
-           
+            IList<Employee> employees = new List<Employee>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT employee_id, department_id, first_name, last_name, birth_date, hire_date FROM city WHERE first_name = @first_name AND last_name = @last_name;", conn);
+                cmd.Parameters.AddWithValue("@first_name", firstNameSearch);
+                cmd.Parameters.AddWithValue("@last_name", lastNameSearch);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Employee employee = CreateEmployeeFromReader(reader);
+                    employees.Add(employee);
+                }
+            }
+
+            return employees;
 
         }
 
@@ -48,7 +66,7 @@ namespace EmployeeProjects.DAO
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT employee_id, department_id, first_name, last_name, birth_date, hire_date FROM city WHERE project_id = @project_id;", conn);
-                cmd.Parameters.AddWithValue("@project_abbreviation", projectId);
+                cmd.Parameters.AddWithValue("@project_id", projectId);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
