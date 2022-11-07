@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetInfoClient.Models;
 using PetInfoServer.DAL.Interfaces;
@@ -11,6 +12,7 @@ namespace PetInfoServer.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class PetController : ControllerBase
     {
         private IPetDAO petDAO;

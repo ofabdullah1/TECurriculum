@@ -52,6 +52,41 @@ namespace PetInfoServer.DAL
             return returnUser;
         }
 
+        public List<User> GetUsers()
+        {
+            List<User> returnUsers = new List<User>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(sql_getUsers, conn);
+                    
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.HasRows && reader.Read())
+                    {
+                        User temp = new User();
+                        temp = GetUserFromReader(reader);
+                        returnUsers.Add(temp);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+
+            return returnUsers;
+        }
+
+
+
+
+
+
         public User AddUser(string username, string password)
         {
             IPasswordHasher passwordHasher = new PasswordHasher();

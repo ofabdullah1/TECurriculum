@@ -12,6 +12,7 @@ namespace PetInfoServer.DAL
 
         private string sqlGetPets = "SELECT * FROM pets;";
         private string sqlDeletePet = "DELETE FROM pets WHERE id = @id";
+       // private string sqlAddPet = "INSERT INTO pets(name, type, breed) VALUES(
 
         public PetDAO(string connectionString)
         {

@@ -10,7 +10,7 @@ namespace WorldClient
     {
         private readonly LoginAPIService loginAPIService = new LoginAPIService();
         private readonly PetAPIService petAPIService = new PetAPIService();
-
+        private readonly UserAPIService userAPIService = new UserAPIService();
 
 
         public void Run()
@@ -27,6 +27,12 @@ namespace WorldClient
 
                 switch (userInput)
                 {
+
+                    case "0":
+                        ListUsers();
+                        break;
+
+
                     case "1":
                         AddAPet();
                         break;
@@ -88,6 +94,7 @@ namespace WorldClient
             }
             Console.WriteLine();
             Console.WriteLine("Main-Menu Type in a command");
+            Console.WriteLine(" 0 - List users");
             Console.WriteLine(" 1 - Add a pet");
             Console.WriteLine(" 2 - Delete a pet");
             Console.WriteLine(" 3 - List pets");
@@ -161,7 +168,18 @@ namespace WorldClient
 
         private void ListPets()
         {
-            List<Pet> pets = petAPIService.GetPets();
+            List<Pet> pets;
+           
+            try
+            {
+                 pets = petAPIService.GetPets();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return;
+            }
+
 
             Console.WriteLine();
             Console.WriteLine();
@@ -174,20 +192,51 @@ namespace WorldClient
             Console.WriteLine();
         }
 
+
+        private void ListUsers()
+        {
+            List<User> users;
+
+            try
+            {
+                users = userAPIService.GetUsers();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return;
+            }
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("The pets are:");
+            foreach (User user in users)
+            {
+                Console.WriteLine(user);
+            }
+            Console.WriteLine();
+        }
+
+
+
+
+
         private void AddAPet()
         {
             Console.WriteLine("Not yet available.");
 
-            //Pet temp = new Pet();
+            Pet temp = new Pet();
 
-            //Console.Write("Enter name: ");
-            //temp.Name = Console.ReadLine();
+            Console.Write("Enter name: ");
+            temp.Name = Console.ReadLine();
 
-            //Console.Write("Enter type (dog, cat, parrot, etc.): ");
-            //temp.Type = Console.ReadLine();
+            Console.Write("Enter type (dog, cat, parrot, etc.): ");
+            temp.Type = Console.ReadLine();
 
-            //Console.Write("Enter breed (Chow, German Shepard, DSH, etc.): ");
-            //temp.Breed = Console.ReadLine();
+            Console.Write("Enter breed (Chow, German Shepard, DSH, etc.): ");
+            temp.Breed = Console.ReadLine();
 
             //petDepot.AddPet(temp);
         }

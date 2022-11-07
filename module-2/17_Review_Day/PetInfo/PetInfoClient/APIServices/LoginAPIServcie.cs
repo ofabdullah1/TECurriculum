@@ -12,7 +12,7 @@ namespace PetInfo.APIServices
         protected static RestClient client = new RestClient();
         protected static APIUser user = new APIUser();
 
-        public bool LoggedIn { get { return !string.IsNullOrWhiteSpace(user.Username); } }
+        public bool LoggedIn { get { return !string.IsNullOrWhiteSpace(user.Token); } }
 
         public bool Register(LoginUser registerUser)
         {
@@ -67,8 +67,8 @@ namespace PetInfo.APIServices
             {
 
                 user.Username = response.Data.Username;
-                //user.Token = response.Data.Token;
-                //client.Authenticator = new JwtAuthenticator(user.Token);
+                user.Token = response.Data.Token;
+                client.Authenticator = new JwtAuthenticator(user.Token);
 
                 return true;
             }
@@ -77,7 +77,7 @@ namespace PetInfo.APIServices
         public void Logout()
         {
             user = new APIUser();
-            //client.Authenticator = null;
+            client.Authenticator = new JwtAuthenticator("bad");
         }
 
     }

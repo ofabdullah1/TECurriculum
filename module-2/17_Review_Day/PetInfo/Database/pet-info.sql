@@ -54,3 +54,7 @@ SET IDENTITY_INSERT [dbo].[users] OFF
 GO
 
 COMMIT TRANSACTION;
+
+SELECT * FROM pets;
+
+INSERT INTO pets(name, type, breed) VALUES('Omar', 'dog','GSD')

@@ -14,15 +14,15 @@ namespace PetInfoServer.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        //private readonly ITokenGenerator tokenGenerator;
+        private readonly ITokenGenerator tokenGenerator;
         private readonly IPasswordHasher passwordHasher;
         private readonly IUserDAO userDAO;
 
 
-        public LoginController( IPasswordHasher _passwordHasher,// ITokenGenerator _tokenGenerator,
+        public LoginController( IPasswordHasher _passwordHasher, ITokenGenerator _tokenGenerator,
             IUserDAO userDAO)
         {
-            //tokenGenerator = _tokenGenerator;
+            tokenGenerator = _tokenGenerator;
             passwordHasher = _passwordHasher;
             this.userDAO = userDAO;
         }
@@ -105,14 +105,14 @@ namespace PetInfoServer.Controllers
             User user = userDAO.GetUser(userParam.Username);
 
             // If we found a user and the password hash matches
-            if (user != null && passwordHasher.VerifyHashMatch(user.PasswordHash, userParam.Password, user.Salt))
+            if (user != null && passwordHasher.VerifyHashMatch(user.PasswordHash, userParam.Password, user.Salt) == true) 
             {
                 // Create an authentication token
                 user.Role = user.Role ?? "";
-                //string token = tokenGenerator.GenerateToken(user.Id, user.Username, user.Role);
+                string token = tokenGenerator.GenerateToken(user.Id, user.Username, user.Role);
 
                 // Create a ReturnUser object to return to the client
-                ReturnUser retUser = new ReturnUser() { Id = user.Id, Username = user.Username, Role = user.Role }; //, Token = token };
+                ReturnUser retUser = new ReturnUser() { Id = user.Id, Username = user.Username, Role = user.Role , Token = token };
 
                 // Switch to 200 OK
                 result = Ok(retUser);
