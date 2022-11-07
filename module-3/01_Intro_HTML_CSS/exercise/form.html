@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+
+<body id = body-section>
+
+    <a href="index.html">Return to main page</a>
+
+    <form method="POST" action="/api/reservation">
+        <div>
+            <label for="nameField">Name:</label>
+            <input id="nameField" name="nameField" type="text" />
+        </div>
+        <div>
+            <label for="emailField">Email:</label>
+            <input id="emailField" name="emailField" type="email" />
+        </div>
+        <div>
+            <label for="dateOfBirth">Date Of Birth:</label>
+            <input id="dateOfBirth" name="dateOfBirth" type="date" />
+        </div>
+        <div>
+            <input type="color" id="head" name="head"
+                   value="#e66465">
+            <label for="head">Favorite Color</label>
+        </div>
+        <div>
+            <label for="number">Favorite Number:</label>
+            <input id="numberField" name="numberField" type="number" />
+        </div>
+        <div>
+            <label for="dataConfirmation">Confirm Data is Correct:</label>
+            <input id="dataConfirmation" name="dataConfirmation" type="checkbox" />
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </form>
+
+</body>
+
+</html>
