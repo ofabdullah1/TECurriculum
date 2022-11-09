@@ -11,10 +11,7 @@ body {
   background-color: rgba(192, 192, 192, 0.1);
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
+
 aside{
   position: fixed;
 border-right-color: rgba(0, 173, 238, 0.4);
@@ -29,27 +26,28 @@ aside > img{
   height: 120px;
   width: 120px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-    
+  margin: 0 auto;
 }
 
+ul{
+  margin:0;
+  padding: 0;
+}
 main {
   margin-left: 200px;
   padding-left: 20px;
   padding-right: 20px;
- 
+
 }
 
 
-aside li{
+aside > nav > ul > li{
   list-style: none;
   text-align: center;
   text-transform: uppercase;
   border-bottom-color:rgba(0, 173, 238, 0.4);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  color:rgba(0, 173, 238, 0.4);
   margin: 10px auto;
   padding-bottom: 10px;
   width: 80%;
@@ -57,7 +55,7 @@ aside li{
   font-weight: 700;
 }
 
-li > a{
+aside > nav > ul > li > a{
   color: #00ADEE;
   text-decoration: none;
   font-weight: 700;
@@ -75,50 +73,49 @@ header > img{
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
-img {
-  position: static;
-  width: 100%;
+
+
+img.banner{
+  display: block;
+  width: auto;
+}
+main{
+  margin-left: 200px;
+  padding-left: 20px;
+  
+}
+main > section > div{
+  display: inline-block;
 }
 section > div > h2{
 color: #8cc36F;
+
 }
-section > div > h2 > i{
+section > h2 > i {
   margin-right: 10px;
-  padding-right: 10px;
 }
 
-div{
- border-left-color: rgb(170, 239, 135, 0.8);
- display: inline;
- 
-}
 
-div#what-we-do {
-  border-right: 1px solid;
-  border-right-color: #8cc36F;
-  padding-top: 10px;
-  margin-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10px;
-}
-div#our-work{
-  border-right: 1px solid;
-  border-left: 1px solid;
-  border-right-color: rgb(170, 239, 135, 0.8);
-  border-top-color: rgb(170, 239, 135, 0.8);
-  border-left-color: rgb(170, 239, 135, 0.8);
-  border-left-style: solid;
-  border-bottom-color: rgb(170, 239, 135, 0.8);
+div:first-child {
+  vertical-align: top;
+  width: 33%;
+  padding-right: 20px;
+  margin-top: 20px;
   padding-left: 20px;
-  border-left-width: 1px;
 }
-div#contact-us{
-  border-right: 1px solid;
-  border-right-color: #8cc36F;
-  border-top-color: rgb(170, 239, 135, 0.8);
-  border-left-color: rgb(170, 239, 135, 0.8);
-  border-bottom-color: rgb(170, 239, 135, 0.8);
+div:last-child {
+  width: 33%;
+  padding-right: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+div:not(:first-child):not(:last-child) {
+
+  width: 33%;
+  padding-right: 20px;
+  margin-top: 20px;
+  border-right: 1px solid rgb(170, 239, 135, 0.8);
   padding-left: 20px;
 }
 
