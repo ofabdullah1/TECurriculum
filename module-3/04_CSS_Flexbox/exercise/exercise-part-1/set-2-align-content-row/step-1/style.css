@@ -15,3 +15,12 @@ body {
   color: #fff;
   border: solid 1px #777;
 }
+
+.container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div .container{
+  justify-content: space-evenly;
+}

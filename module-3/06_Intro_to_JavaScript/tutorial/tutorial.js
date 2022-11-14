@@ -1,6 +1,6 @@
 // Step Two: Reassign a variable
 function stepTwo() {
-  const result = false;
+  let result = false;
   result = true;
   return result;
 }
@@ -8,20 +8,24 @@ function stepTwo() {
 // Step Three: Add values to an array
 function stepThree() {
   const values = [];
+  values.push(false)
+  values.push(5)
+  values.push('yo')
+  
   return values;
 }
 
 // Step Four: Round a number to two decimal places
 function stepFour() {
   const twoThirds = 2 / 3;
-  const roundedTwoThirds = twoThirds;
-  return roundedTwoThirds;
+  const roundedTwoThirds = Number.parseFloat(twoThirds.toFixed(2));
+    return roundedTwoThirds;
 }
 
 // Step Five: Check for strict equality
 function stepFive() {
   let answer;
-  if (100 == '100') {
+  if (100 === '100') {
     answer = 'Yes';
   } else {
     answer = 'No';
@@ -34,6 +38,10 @@ function stepSix() {
   const amounts = [10, 20, 30, 40];
   let sum = 0;
 
+  for(let i = 0; i < amounts.length; i++){
+    sum += amounts[i]
+  }
+
   return sum;
 }
 
@@ -41,8 +49,10 @@ function stepSix() {
 function stepSeven() {
   const iceCreamCone = {
     flavor: 'strawberry',
-    coneType: 'waffle'
+    coneType: 'waffle',
+    numberOfScoops: 2
   }
 
+  iceCreamCone.hasSprinkles = true;
   return iceCreamCone;
 }

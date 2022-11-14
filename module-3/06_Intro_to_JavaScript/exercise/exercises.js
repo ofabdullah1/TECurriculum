@@ -7,9 +7,14 @@
 		sumDouble(2, 2) → 8
 
 		function sumDouble(x, y) {
-			// do logic here
-			// return result;
-			return x + y;
+			if(x != y){
+				return x + y;
+			}
+			else if(x === y)
+			{
+				return 2 * (x + y)
+			}
+
         }
 */
 
