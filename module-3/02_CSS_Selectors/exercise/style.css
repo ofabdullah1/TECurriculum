@@ -27,7 +27,15 @@ aside > img{
   width: 120px;
   display: block;
   margin: 0 auto;
+  
 }
+
+div#our-work {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: rgb(170, 239, 135, 0.8);
+}
+
 
 ul{
   margin:0;
@@ -75,10 +83,7 @@ header > img{
 }
 
 
-img.banner{
-  display: block;
-  width: auto;
-}
+
 main{
   margin-left: 200px;
   padding-left: 20px;
@@ -101,7 +106,8 @@ div:first-child {
   width: 33%;
   padding-right: 20px;
   margin-top: 20px;
-  padding-left: 20px;
+
+  border-right: 1px solid rgb(170, 239, 135, 0.8);
 }
 div:last-child {
   width: 33%;
@@ -119,3 +125,16 @@ div:not(:first-child):not(:last-child) {
   padding-left: 20px;
 }
 
+div > h2 > i {
+  padding-right: 20 px;
+  margin-right: 20px;
+}
+
+li:first-child{
+  text-decoration: underline;
+}
+
+img.banner{
+  display: block;
+  width: 100%;
+}
