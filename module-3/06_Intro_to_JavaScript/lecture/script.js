@@ -4,14 +4,22 @@
 
 // Single line comment
 
+helloWorld();
+
+function helloWorld(){
+  console.log("Hello World");
+}
 /**
  * Functions start with the word function.
  * They don't have a return type and the naming convention is camel-case.
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  let catCount = 7;
   // Declares a variable those value can be changed
+ 
   // Declares a variable that will always be an array
+  const pets = []
 }
 
 /**
@@ -23,6 +31,7 @@ function variables() {
 function printParameters(param1, param2) {
   console.log(`The value of param1 is ${param1}`);
   console.log(`The value of param2 is ${param2}`);
+  return "I'm done"
 }
 
 /**
@@ -71,12 +80,14 @@ function objects() {
       "Samir Nagheenanajar",
       "Michael Bolton"
     ]
+
   };
-
+  
   // Log the object
-
+  console.log (person)
+  
   // Log the first and last name
-
+console.log(person.age)
   // Log each employee
 }
 
