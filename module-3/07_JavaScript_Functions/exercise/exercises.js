@@ -19,6 +19,14 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
+function isAdmitted(gpa,recommendation,satScore){
+    if(gpa > 4.0 || satScore > 1300){
+        return true;
+    }
+    else if(gpa > 3 && recommendation === true){
+        return true;
+    }
+}
 
 /**
  * Write a function called useParameterToFilterArray that accepts a filter function
