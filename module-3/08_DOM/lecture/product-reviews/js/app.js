@@ -5,7 +5,7 @@ const reviews = [
     reviewer: 'Malcolm Madwell',
     title: 'What a book!',
     review:
-    "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
+      "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
     rating: 3
   },
   {
@@ -36,19 +36,43 @@ const reviews = [
  * Get the page title by the id and the query the .name selector
  * once you have the element you can add the product name to the span.
  */
-function setPageTitle() {}
+function setPageTitle() {
+  console.log("reached setPageTitle")
+  const span = document.querySelector(".name")
+  console.log(span)
+  span.innerText = book_name;
+}
 
 /**
  * Add the product description to the page.
  */
-function setPageDescription() {}
+function setPageDescription() {
+  console.log("reached setPageDescription")
+  const p = document.querySelector(".description")
+  p.innerText = description;
+}
 
 /**
  * Display all of the reviews on the page.
  * Loop over the array of reviews and use some helper functions
  * to create the elements needed for the markup and add them to the DOM.
  */
-function displayReviews() {}
+function displayReviews() {
+  console.log("reached displayReviews")
+
+  const main = document.querySelector("div#main")
+
+  reviews.forEach(item => {
+    const container = document.createElement("div");
+    container.classList.add("review");
+
+   addReviewer(container, item.reviewer);
+   addTitle(container, item.title)
+   addReview(container, item.review)
+
+   main.appendChild(container);
+  })
+}
 
 /**
  * Create a new h2 element with the name of the reviewer and append it to
@@ -57,28 +81,40 @@ function displayReviews() {}
  * @param {HTMLElement} parent: The element to append the reviewer to
  * @param {string} name The name of the reviewer
  */
-function addReviewer(parent, name) {}
+function addReviewer(parent, name) { 
+  const reviewer = document.createElement("h4");
+  reviewer.innerText = name;
+  parent.appendChild(reviewer)
+}
 
 /**
  * Add the rating div along with a star image for the number of ratings 1-5
  * @param {HTMLElement} parent
  * @param {Number} numberOfStars
  */
-function addRating(parent, numberOfStars) {}
+function addRating(parent, numberOfStars) { }
 
 /**
  * Add an h3 element along with the review title
  * @param {HTMLElement} parent
  * @param {string} title
  */
-function addTitle(parent, title) {}
+function addTitle(parent, title) { 
+  const h3 = document.createElement("h3");
+  h3.innerText = title;
+  parent.appendChild(h3)
+}
 
 /**
  * Add the product review
  * @param {HTMLElement} parent
  * @param {string} review
  */
-function addReview(parent, review) {}
+function addReview(parent, review) { 
+  const p = document.createElement("p");
+  p.innerText = review;
+  parent.appendChild(p)
+}
 
 // set the product reviews page title
 setPageTitle();
