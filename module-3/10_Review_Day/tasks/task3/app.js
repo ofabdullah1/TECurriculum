@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    DisplayDate();
+    
     
 
-    document.getElementsByClassName('btn').addEventListener('click', DisplayDate())
+    document.getElementsById('time').addEventListener('click', DisplayDate)
 
 
     function DisplayDate() {
-      document.getElementsByClassName("btn").innerHTML = Date();
+      document.getElementsByClassName("btn").innerHTML = Date;
     }
 
 })
