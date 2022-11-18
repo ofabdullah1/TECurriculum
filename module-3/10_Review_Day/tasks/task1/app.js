@@ -55,3 +55,11 @@ const homes = [
 console.log("This is TASK1")
 //write your code below
 
+function basic_forEach(homes){
+ homes.forEach(element => {
+    return element;
+  });
+  
+}
+
+basic_forEach();
