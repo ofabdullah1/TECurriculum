@@ -5,8 +5,15 @@ let reviews = [
     reviewer: 'Malcolm Madwell',
     title: 'What a book!',
     review:
-    "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
+      "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
     rating: 3
+  },
+  {
+    reviewer: 'John Fulton',
+    title: "It's a book",
+    review:
+      "It is a book",
+    rating: 5
   }
 ];
 
@@ -45,7 +52,9 @@ function displayReviews() {
  */
 function displayReview(review) {
   const main = document.getElementById('main');
+
   const tmpl = document.getElementById('review-template').content.cloneNode(true);
+
   tmpl.querySelector('h4').innerText = review.reviewer;
   tmpl.querySelector('h3').innerText = review.title;
   tmpl.querySelector('p').innerText = review.review;
@@ -59,19 +68,42 @@ function displayReview(review) {
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
 
-// Set the product reviews page title.
-setPageTitle();
-// Set the product reviews page description.
-setPageDescription();
-// Display all of the product reviews on our page.
-displayReviews();
+document.addEventListener('DOMContentLoaded', () => {
+
+
+  // Set the product reviews page title.
+  setPageTitle();
+  // Set the product reviews page description.
+  setPageDescription();
+  // Display all of the product reviews on our page.
+  displayReviews();
+
+  console.log("Dom Content Loaded!")
+
+  const p = document.querySelector(".description");
+  p.addEventListener("click", () => {
+    toggleDescriptionEdit(p)
+  })
+
+  const input = document.getElementById("inputDesc");
+  input.addEventListener("keyup", item => {
+    if (item.key == "Enter") {
+
+    } else if (item.key == "Escape") {
+      console.log("Reached Escape")
+    } else {
+      console.log(item.key)
+    }
+  })
+})
 
 /**
  * Hide the description and show the text box.
  *
  * @param {Element} desc the element containing the description
  */
-function toggleDescriptionEdit(desc) {
+function toggleDescription(desc) {
+  console.log("reached toggleDescription()")
   const textBox = desc.nextElementSibling;
   textBox.value = desc.innerText;
   textBox.classList.remove('d-none');
@@ -129,4 +161,4 @@ function resetFormValues() {
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() {}
+function saveReview() { }
