@@ -18,7 +18,13 @@ namespace Exercises
         */
         public int[] MakeMiddle(int[] nums)
         {
-            return new int[] { };
+            int[] newArray = new int[2];
+            int startingIndex = (nums.Length / 2) - 1;
+
+            newArray[0] = nums[startingIndex];
+            newArray[1] = nums[startingIndex + 1];
+
+            return newArray;
         }
     }
 }
