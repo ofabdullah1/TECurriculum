@@ -50,6 +50,7 @@ function displayGroceries() {
           item.classList.add('completed');
           item.querySelector('i').classList.add('completed');
         });
+        allComplete.innerText = 'Mark All Incomplete'
     
     }
 
