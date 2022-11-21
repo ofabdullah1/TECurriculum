@@ -59,7 +59,7 @@ There are three buttons following the user listing table. Complete the following
 
 > Once you complete this step, the tests under "Step Three Tests, Disable, Enable, and Delete Selected Users" pass.
 
-## Step Four: Select all checkbox
+## OPTIONAL: Step Four: Select all checkbox
 
 The "select all" checkbox is the checkbox on the first row with the filter inputs. Complete the following tasks for the "select all" checkbox:
 
