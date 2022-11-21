@@ -35,4 +35,22 @@ function displayGroceries() {
     li.appendChild(checkCircle);
     ul.appendChild(li);
   });
-}
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    setPageTitle();
+    displayGroceries();
+
+    const allComplete = document.getElementById('toggleAll');
+
+    allComplete.addEventListener('click', () => {
+      if (allItemsIncomplete) {
+        groceries.forEach((item) => {
+          item.classList.add('completed');
+          item.querySelector('i').classList.add('completed');
+        });
+    
+    }
+
+  }
