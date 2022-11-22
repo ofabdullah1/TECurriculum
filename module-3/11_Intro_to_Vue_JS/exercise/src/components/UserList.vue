@@ -104,11 +104,18 @@ export default {
           status: "Inactive",
         },
       ],
-    };
+      filter: {
+        firstName: "",
+        lastName: "",
+        username: "",
+        emailAddress: "",
+        status: "",
+      }
+    }
   },
 
   computed: {
-    filteredList() {
+    filteredList(){
       return 
         this.users.filter((user =>
           user.firstName.toLowerCase().includes(this.filter.firstName)
@@ -116,11 +123,11 @@ export default {
         user.lastName.toLowerCase().includes(this.filter.lastName) &&
         user.username.includes(this.filter.username) &&
         user.emailAddress.includes(this.filter.emailAddress) &&
-        user.status.includes(this.filter.status))
+        user.status.includes(this.filter.status)))
       
-    }
-  }
-}
+    
+  
+    
 </script>
 
 <style scoped>
@@ -143,3 +150,4 @@ select {
   font-size: 16px;
 }
 </style>
+        
