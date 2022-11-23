@@ -66,7 +66,14 @@
 
     <button>Add New User</button>
 
-    <form id="frmAddNewUser">
+    <input
+    v-show="!showForm"
+      type="button"
+      value="Show Form"
+      v-on:click="showForm = true"
+      />
+
+    <form v-show="showForm" id="frmAddNewUser">
       <div class="field">
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" />
@@ -83,6 +90,8 @@
         <label for="emailAddress">Email Address:</label>
         <input type="text" name="emailAddress" />
       </div>
+
+       <input v-on:click="showForm = false" type="button" value="Cancel" />
       <button type="submit" class="btn save">Save User</button>
     </form>
   </div>
@@ -158,7 +167,10 @@ export default {
           emailAddress: "msmith@foo.com",
           status: "Disabled"
         }
-      ]
+      ],
+
+      showForm: false,
+
     };
   },
   methods: {

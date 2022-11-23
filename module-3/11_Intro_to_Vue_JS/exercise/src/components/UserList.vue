@@ -36,7 +36,7 @@
       <tr
         v-for="user in filteredList"
         v-bind:key="user.username"
-        v-bind:class="{ disabled: user.status === 'Disabled' }"
+        v-bind:class="{disabled: user.status === 'Disabled'}"
       >
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
@@ -66,67 +66,58 @@ export default {
           lastName: "Smith",
           username: "jsmith",
           emailAddress: "jsmith@gmail.com",
-          status: "Active",
+          status: 'Active',
         },
         {
           firstName: "Anna",
           lastName: "Bell",
           username: "abell",
           emailAddress: "abell@yahoo.com",
-          status: "Active",
+          status: 'Active',
         },
         {
           firstName: "George",
           lastName: "Best",
           username: "gbest",
           emailAddress: "gbest@gmail.com",
-          status: "Inactive",
+          status: 'Disabled',
         },
         {
           firstName: "Ben",
           lastName: "Carter",
           username: "bcarter",
           emailAddress: "bcarter@gmail.com",
-          status: "Active",
+          status: 'Active',
         },
         {
           firstName: "Katie",
           lastName: "Jackson",
           username: "kjackson",
           emailAddress: "kjackson@yahoo.com",
-          status: "Active",
+          status: 'Active',
         },
         {
           firstName: "Mark",
           lastName: "Smith",
           username: "msmith",
           emailAddress: "msmith@foo.com",
-          status: "Inactive",
-        },
-      ],
-      filter: {
-        firstName: "",
-        lastName: "",
-        username: "",
-        emailAddress: "",
-        status: "",
-      }
+          status: 'Disabled',
+        }
+      ]
     }
   },
-
   computed: {
-    filteredList(){
-      return 
-        this.users.filter((user =>
+    filteredList() {
+      return this.users.filter(user =>
           user.firstName.toLowerCase().includes(this.filter.firstName)
          &&
         user.lastName.toLowerCase().includes(this.filter.lastName) &&
         user.username.includes(this.filter.username) &&
         user.emailAddress.includes(this.filter.emailAddress) &&
-        user.status.includes(this.filter.status)))
-      
-    
-  
+        user.status.includes(this.filter.status))
+    }
+  }
+}
     
 </script>
 
@@ -150,4 +141,4 @@ select {
   font-size: 16px;
 }
 </style>
-        
+    
