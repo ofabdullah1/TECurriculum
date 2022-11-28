@@ -13,6 +13,9 @@
         <label >Fast</label>
       <input type="checkbox" v-model="listInfo" value="fast">
 
+       <label >Strong</label>
+      <input type="checkbox" v-model="listInfo" value="strong">
+
       <p>{{listInfo}}</p>
       <p>The size of the list is {{listCount}} element(s)</p>
 
