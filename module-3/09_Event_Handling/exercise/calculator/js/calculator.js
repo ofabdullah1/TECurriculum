@@ -37,13 +37,13 @@ function performOperation() {
 function parseNumber(num) {
   return num.includes('.') ? parseFloat(num) : parseInt(num);
 }
-
+  
 /**
  * Capture the previous value and the clicked operator
  * so that an operation can be performed.
  */
 function clickOperator() {
-  operator = target.value;
+  operator = event.target.value;
   previous = display.value;
   operatorClicked = true;
 }
