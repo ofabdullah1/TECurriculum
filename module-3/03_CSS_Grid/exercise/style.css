@@ -8,8 +8,8 @@ html {
 }
 
 body {
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-left: 8%;
+    margin-right: 8%;
     background-color: rgba(192, 192, 192, 0.1);
 }
 
@@ -88,7 +88,7 @@ header img {
 
 #experience-grid{
     display: grid;
-    grid-template-columns: 10px 10px;
+    grid-template-columns: 1fr 1fr;
     row-gap: 20px;
     column-gap: 50px ;
     grid-template-areas: 
@@ -108,9 +108,7 @@ header img {
 #div#experience-web{
     grid-area: experience-web;
 }
-#div#experience-design{
-    grid-area: experience-design;
-}
+
 
 @media (max-width: 1024px) {
     #main-grid {
@@ -146,14 +144,14 @@ header img {
     text-align: center;
 }
 
-div#experience-grid{
+#experience-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px ;
     row-gap: 20px;
     grid-template-areas: 
     "experience-code experience-code"
-    "experience-database experience-design";
+    "experience-design experience-database ";
     grid-area: exp-grid;
 }
 

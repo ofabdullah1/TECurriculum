@@ -3,7 +3,7 @@
       <div class="book-title">{{book.title}}</div>
     <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
     <div class ="book-author">{{book.author}}</div>
-    <button class="mark-read" v-on:click.prevent="markReadUnread" v-if="book.read">Mark Unread</button>
+    <button class="mark-unread" v-on:click.prevent="markReadUnread" v-if="book.read">Mark Unread</button>
     <button class="mark-read" v-on:click.prevent="markReadUnread" v-if="!book.read">Mark Read</button>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     
     methods:{
         markReadUnread() {
-            this.$store.commit("FLIP_STATUS, this.book");
+            this.$store.commit("FLIP_STATUS", this.book);
         },
     },
 }
@@ -37,7 +37,7 @@ export default {
     background-color: lightgray;
 }
 
-.card .book-title {
+.card.book-title {
     font-size: 1.5rem;
 }
 
