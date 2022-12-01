@@ -14,6 +14,9 @@ namespace Capstone.DAO
         private string sqlGetPet = "SELECT * FROM pets WHERE id = @id;";
         private string sqlAddPet = "INSERT INTO pets (name, type, breed, image) " +
             "VALUES(@name, @type, @breed, @image);";
+        private string sqlUpdatePet = "Update pets Set name=@name, type=@type, breed=@breed, image=@image WHERE id = @id; "; 
+    
+
 
         public PetDAO(string connectionString)
         {
@@ -99,6 +102,47 @@ namespace Capstone.DAO
                     }
 
                     cmd.Parameters.AddWithValue("@breed", pet.Breed);
+
+                    int count = cmd.ExecuteNonQuery();
+
+                    if (count > 0)
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        public bool UpdatePet(Pet pet)
+        {
+            bool result = false;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sqlUpdatePet, conn);
+                    cmd.Parameters.AddWithValue("@name", pet.Name);
+                    cmd.Parameters.AddWithValue("@type", pet.Type);
+
+                    if (string.IsNullOrEmpty(pet.Image))
+                    {
+                        cmd.Parameters.AddWithValue("@image", "");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@image", pet.Image);
+                    }
+
+                    cmd.Parameters.AddWithValue("@breed", pet.Breed);
+                    cmd.Parameters.AddWithValue("@id", pet.Id);
 
                     int count = cmd.ExecuteNonQuery();
 

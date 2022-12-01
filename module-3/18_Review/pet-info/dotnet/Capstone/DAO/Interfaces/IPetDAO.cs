@@ -8,6 +8,8 @@ namespace Capstone.DAO.Interfaces
         List<Pet> GetPets();
         Pet GetPet(int petId);
         bool AddPet(Pet pet);
+
+        bool UpdatePet(Pet pet);
        
     }
 }

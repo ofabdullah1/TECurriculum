@@ -28,7 +28,7 @@ namespace Capstone.Controllers
             return Ok(petDAO.GetPets());
         }
 
-        [HttpGet("petId")]
+        [HttpGet("{petId}")]
         public ActionResult<Pet> GetPet(int petId)
         {
             return Ok(petDAO.GetPet(petId));
@@ -42,6 +42,23 @@ namespace Capstone.Controllers
             if (result)
             {
                 return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        // Get: /pet/5
+        [HttpPut("{petId}")]
+        public ActionResult UpdatePet(int petId, Pet pet)
+        {
+
+            bool result = petDAO.UpdatePet(pet);
+            if (result)
+            {
+            return Ok();
+
             }
             else
             {

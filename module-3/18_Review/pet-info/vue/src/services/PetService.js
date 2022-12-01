@@ -14,6 +14,10 @@ export default {
 
   addPet(pet) {
     return axios.post(path, pet)
+  },
+
+  updatePet(pet){
+    return axios.put(path + "/" + pet.id, pet)
   }
 
 }

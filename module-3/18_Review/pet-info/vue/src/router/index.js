@@ -12,6 +12,7 @@ import Customers from '../views/Customers.vue'
 import Home from '../views/Home.vue'
 import Pet from '../views/Pet.vue'
 import Pets from '../views/Pets.vue'
+import PetUpdate from '../views/Pets.vue'
 
 Vue.use(Router)
 
@@ -92,13 +93,24 @@ const router = new Router({
     },
 
     {
-      path: '/pet/:id',
+      path: '/pet/:petId',
       name: 'Pet',
       component: Pet,
       meta: {
         requiresAuth: true
       }
     },
+
+    {
+      path: '/petupdate/:petId',
+      name: 'PetUpdate',
+      component: PetUpdate,
+      meta: {
+        requiresAuth: false
+      }
+    },
+
+   
 
     {
       path: "/register",
