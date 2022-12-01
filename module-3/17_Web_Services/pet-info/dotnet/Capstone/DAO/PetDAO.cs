@@ -63,8 +63,8 @@ namespace Capstone.DAO
 
                     if (reader.Read())
                     {
-                         pet = ReaderToPet(reader);
-                       
+                        pet = ReaderToPet(reader);
+
                     }
                 }
             }
@@ -88,6 +88,15 @@ namespace Capstone.DAO
                     SqlCommand cmd = new SqlCommand(sqlAddPet, conn);
                     cmd.Parameters.AddWithValue("@name", pet.Name);
                     cmd.Parameters.AddWithValue("@type", pet.Type);
+
+                    if (string.IsNullOrEmpty(pet.Image))
+                     {
+                        cmd.Parameters.AddWithValue("@image", "");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@image", pet.Image);
+                    }
                     cmd.Parameters.AddWithValue("@breed", pet.Breed);
 
                     int count = cmd.ExecuteNonQuery();

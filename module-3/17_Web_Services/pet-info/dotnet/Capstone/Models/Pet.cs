@@ -12,6 +12,8 @@ namespace Capstone.Models
         public bool IsSpayedOrNeutered { get; set; }
         public DateTime LastVetVisit { get; set; }
 
+        public string Image { get; set; }
+
         public Pet(string name)
         {
             Name = name;

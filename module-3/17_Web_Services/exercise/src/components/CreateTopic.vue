@@ -24,7 +24,11 @@ export default {
     };
   },
   methods: {
-    saveTopic() {}
+    saveTopic() {
+      return{
+        
+      }
+    }
   }
 };
 </script>
