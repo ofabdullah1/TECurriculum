@@ -33,6 +33,7 @@ export default {
   methods: {
     deleteMessage(id) {
       messageService.delete(id)
+      .delete(id)
       .then(response => {
         if (response.status == 200) {
           this.$store.commit("DELETE_MESSAGE", id);

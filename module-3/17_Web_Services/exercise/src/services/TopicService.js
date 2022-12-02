@@ -20,11 +20,11 @@ export default {
   },
 
   update(id, topic) {
-    return http.put('/topics/${id}', topic)
+    return http.put(`/topics/${id}`, topic);
   },
 
   delete(id) {
-    return http.delete('/topics/${id}');
+    return http.delete(`/topics/${id}`)
   }
 
 }
