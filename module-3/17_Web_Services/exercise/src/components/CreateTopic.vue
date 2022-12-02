@@ -25,11 +25,17 @@ export default {
   },
   methods: {
     saveTopic() {
-      return{
+       topicService
+      .create(this.topic)
+      .then((response) => {
+        if (response.status == 201) {
+          this.$router.push("/");
+        }
+      })
         
-      }
+      },
     }
-  }
+  
 };
 </script>
 

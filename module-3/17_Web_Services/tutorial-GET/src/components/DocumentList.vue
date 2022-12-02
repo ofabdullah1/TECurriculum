@@ -24,7 +24,11 @@
   </table>
 </template>
 
+
 <script>
+
+import docsService from "../services/DocsService";
+
 export default {
   name: "document-list",
   data() {
@@ -36,6 +40,11 @@ export default {
     viewDocument(id) {
       this.$router.push(`/document/${id}`);
     }
+  },
+  created() {
+    docsService.list().then((response) => {
+      this.docs = response.data;
+    });
   }
 };
 </script>
